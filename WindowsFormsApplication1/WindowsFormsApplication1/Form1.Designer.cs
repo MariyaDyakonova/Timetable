@@ -899,6 +899,7 @@
             this.button_addLect.TabIndex = 5;
             this.button_addLect.Text = "Добавить";
             this.button_addLect.UseVisualStyleBackColor = true;
+            this.button_addLect.Click += new System.EventHandler(this.button_addLect_Click);
             // 
             // dGV_DiscForLecturer
             // 
