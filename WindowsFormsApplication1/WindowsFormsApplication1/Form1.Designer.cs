@@ -276,7 +276,6 @@
             this.button_addLesson.TabIndex = 16;
             this.button_addLesson.Text = "Добавить занятие";
             this.button_addLesson.UseVisualStyleBackColor = true;
-            this.button_addLesson.Click += new System.EventHandler(this.button_addLesson_Click);
             // 
             // label11
             // 
@@ -786,6 +785,7 @@
             this.button_addDiscForLect.TabIndex = 14;
             this.button_addDiscForLect.Text = "Добавить предмет";
             this.button_addDiscForLect.UseVisualStyleBackColor = true;
+            this.button_addDiscForLect.Click += new System.EventHandler(this.button_addDiscForLect_Click);
             // 
             // comboBox_testDiscipline
             // 
@@ -926,6 +926,8 @@
             this.dGV_Lecturer.ReadOnly = true;
             this.dGV_Lecturer.Size = new System.Drawing.Size(503, 218);
             this.dGV_Lecturer.TabIndex = 0;
+            this.dGV_Lecturer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Lecturer_CellContentClick);
+            this.dGV_Lecturer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGV_lecturer_MouseClick);
             // 
             // tabPage4
             // 
@@ -967,7 +969,6 @@
             this.button_excel.TabIndex = 14;
             this.button_excel.Text = "Экспорт";
             this.button_excel.UseVisualStyleBackColor = true;
-            this.button_excel.Click += new System.EventHandler(this.button_excel_Click);
             // 
             // label4
             // 
@@ -1158,7 +1159,6 @@
             this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
