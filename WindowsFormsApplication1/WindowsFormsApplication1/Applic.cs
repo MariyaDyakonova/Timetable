@@ -33,7 +33,6 @@ namespace WindowsFormsApplication1
             command.Parameters.AddWithValue(ThirdObjAlias, titleThirdObj);
             command.ExecuteNonQuery();
         }
- 
 
         public DataTable fillDataTable(string query, MySqlConnection con, ref MySqlDataAdapter da, ref DataSet ds)
         {
