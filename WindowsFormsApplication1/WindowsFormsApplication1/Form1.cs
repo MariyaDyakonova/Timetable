@@ -120,6 +120,45 @@ namespace TimeTableProject
             }
         }
 
+        private void button_addGroup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (tB_groupName.Text != "")
+                {
+                    try
+                    {
+                        app.getSqlWithAliasFor1Object(tB_groupName.Text, "@groupName", Queries.insertGroup, connect);
+                        //метод показывает бд
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+
+                    tB_groupName.Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("Заполните поле!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void button_updateGroup_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void dGV_Lecturer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
