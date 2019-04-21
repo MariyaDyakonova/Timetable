@@ -156,7 +156,33 @@ namespace TimeTableProject
 
         private void button_updateGroup_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                if (tB_groupName.Text != "")
+                {
+                    try
+                    {
+                        tB_groupName.Clear();
+                        // app.getSqlWithAliasFor2Object(tB_groupName.Text, "@groupName", myIndex, "@groupID", Queries.updateGroup, connect);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                    tB_groupName.Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("Выберите группу для редактирования");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dGV_Lecturer_CellContentClick(object sender, DataGridViewCellEventArgs e)
