@@ -767,6 +767,7 @@
             this.button_delDiscForLect.TabIndex = 16;
             this.button_delDiscForLect.Text = "Удалить предмет";
             this.button_delDiscForLect.UseVisualStyleBackColor = true;
+            this.button_delDiscForLect.Click += new System.EventHandler(this.button_delDiscForLect_Click);
             // 
             // button_updDiscForLect
             // 
@@ -777,6 +778,7 @@
             this.button_updDiscForLect.TabIndex = 15;
             this.button_updDiscForLect.Text = "Изменить предмет";
             this.button_updDiscForLect.UseVisualStyleBackColor = true;
+            this.button_updDiscForLect.Click += new System.EventHandler(this.button_updDiscForLect_Click);
             // 
             // button_addDiscForLect
             // 
@@ -915,6 +917,7 @@
             this.dGV_DiscForLecturer.ReadOnly = true;
             this.dGV_DiscForLecturer.Size = new System.Drawing.Size(423, 218);
             this.dGV_DiscForLecturer.TabIndex = 0;
+            this.dGV_DiscForLecturer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGV_DiscForLecturer_MouseClick);
             // 
             // dGV_Lecturer
             // 
@@ -1079,6 +1082,7 @@
             this.button_deleteRoom.TabIndex = 6;
             this.button_deleteRoom.Text = "Удалить аудиторию";
             this.button_deleteRoom.UseVisualStyleBackColor = true;
+            this.button_deleteRoom.Click += new System.EventHandler(this.button_deleteRoom_Click);
             // 
             // button_updateRoom
             // 
@@ -1089,6 +1093,7 @@
             this.button_updateRoom.TabIndex = 6;
             this.button_updateRoom.Text = "Изменить аудиторию";
             this.button_updateRoom.UseVisualStyleBackColor = true;
+            this.button_updateRoom.Click += new System.EventHandler(this.button_updateRoom_Click);
             // 
             // label2
             // 
@@ -1119,6 +1124,7 @@
             this.button_addRoom.TabIndex = 3;
             this.button_addRoom.Text = "Добавить аудиторию";
             this.button_addRoom.UseVisualStyleBackColor = true;
+            this.button_addRoom.Click += new System.EventHandler(this.button_addRoom_Click);
             // 
             // tB_roomNumber
             // 
@@ -1149,6 +1155,7 @@
             this.dGV_Rooms.ReadOnly = true;
             this.dGV_Rooms.Size = new System.Drawing.Size(505, 333);
             this.dGV_Rooms.TabIndex = 0;
+            this.dGV_Rooms.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGV_Rooms_MouseDoubleClick);
             // 
             // button1
             // 
