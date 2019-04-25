@@ -277,6 +277,7 @@
             this.button_addLesson.TabIndex = 16;
             this.button_addLesson.Text = "Добавить занятие";
             this.button_addLesson.UseVisualStyleBackColor = true;
+            this.button_addLesson.Click += new System.EventHandler(this.button_addLesson_Click);
             // 
             // label11
             // 
@@ -349,6 +350,7 @@
             this.tabControl_Days.SelectedIndex = 0;
             this.tabControl_Days.Size = new System.Drawing.Size(773, 297);
             this.tabControl_Days.TabIndex = 0;
+            this.tabControl_Days.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabTuesday_MouseDoubleClick);
             // 
             // tabPage_Monday
             // 
@@ -376,6 +378,7 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(743, 302);
             this.dataGridView2.TabIndex = 2;
+            this.dataGridView2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabMonday_MouseDoubleClick);
             // 
             // dGV_tabMonday
             // 
@@ -442,6 +445,7 @@
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(743, 302);
             this.dataGridView3.TabIndex = 2;
+            this.dataGridView3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabWednesday_MouseDoubleClick);
             // 
             // dGV_tabWednesday
             // 
@@ -480,6 +484,7 @@
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.Size = new System.Drawing.Size(743, 302);
             this.dataGridView4.TabIndex = 2;
+            this.dataGridView4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabThursday_MouseDoubleClick);
             // 
             // dGV_tabThursday
             // 
@@ -518,6 +523,7 @@
             this.dataGridView5.ReadOnly = true;
             this.dataGridView5.Size = new System.Drawing.Size(743, 302);
             this.dataGridView5.TabIndex = 3;
+            this.dataGridView5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabFriday_MouseDoubleClick);
             // 
             // dGV_tabFriday
             // 
@@ -556,6 +562,7 @@
             this.dataGridView6.ReadOnly = true;
             this.dataGridView6.Size = new System.Drawing.Size(743, 302);
             this.dataGridView6.TabIndex = 3;
+            this.dataGridView6.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabSaturday_MouseDoubleClick);
             // 
             // dGV_tabSaturday
             // 

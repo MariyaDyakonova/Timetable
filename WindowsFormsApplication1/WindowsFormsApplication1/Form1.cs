@@ -17,14 +17,17 @@ namespace TimeTableProject
     {
         private MySqlConnection connect;
         private MySqlDataAdapter commonDataAdapter; //заполняет DataSet данными из БД
-        static int changedRow, changedDiscipline;
-        private int myIndex, discIndex;
+        static int changedRow, changedColumn, changedDiscipline;
+        DataGridView[] dgvWeekArray;
+        private int myIndex, ringIndex, discIndex;
+       // List<int> ringIDList, groupIDList, dayIDList;
+
 
         Applic app = new Applic();
   
         private DataSet commonDataSet, disciplineDataSet;  //хранилище данных
 
-        //DataGridView[] dgvWeekArray;
+        
         public Form1()
         {
             InitializeComponent();
@@ -44,8 +47,25 @@ namespace TimeTableProject
 
             connect.Clone();
             showDataBase();
-
+            dgvWeekArray = new DataGridView[] { dGV_tabMonday, dGV_tabTuesday, dGV_tabWednesday, dGV_tabThursday, dGV_tabFriday, dGV_tabSaturday };
+            fillDGVnull();
+            fillTimetableDataGrid(dgvWeekArray);
+           
         }
+        private void fillDGVnull()
+        {
+            for (int m = 0; m < dgvWeekArray.Length; m++)
+            {
+                for (int i = 0; i < dgvWeekArray[m].RowCount; i++)
+                {
+                    for (int j = 0; j < dgvWeekArray[m].ColumnCount; j++)
+                    {
+                        dgvWeekArray[m].Rows[i].Cells[j].Value = "";
+                    }
+                }
+            }
+        }
+
 
         #region Преподаватель (Lecturer) 
 
@@ -218,6 +238,8 @@ namespace TimeTableProject
             }
         }
 
+        
+
         //изменение аудитории 
         private void button_updateRoom_Click(object sender, EventArgs e)
         {
@@ -237,7 +259,9 @@ namespace TimeTableProject
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+       
+
         //удаление аудитории 
         private void button_deleteRoom_Click(object sender, EventArgs e)
         {
@@ -255,6 +279,7 @@ namespace TimeTableProject
             }
         }
 
+
         private void dGV_Rooms_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
@@ -270,6 +295,111 @@ namespace TimeTableProject
             }
         }
         #endregion
+
+        #region Составление расписания
+
+        private void dGV_tabMonday_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            clickOnTimeiableDGV(dGV_tabMonday);
+        }
+
+        private void dGV_tabTuesday_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            clickOnTimeiableDGV(dGV_tabTuesday);
+        }
+
+        private void dGV_tabWednesday_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            clickOnTimeiableDGV(dGV_tabWednesday);
+        }
+
+        private void dGV_tabThursday_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            clickOnTimeiableDGV(dGV_tabThursday);
+        }
+        private void dGV_tabFriday_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            clickOnTimeiableDGV(dGV_tabFriday);
+        }
+
+        private void dGV_tabSaturday_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            clickOnTimeiableDGV(dGV_tabSaturday);
+        }
+        private void clickOnTimeiableDGV(DataGridView inputDGV)
+        {
+            try
+            {
+                changedRow = inputDGV.SelectedCells[0].RowIndex;
+                changedColumn = inputDGV.SelectedCells[0].ColumnIndex;
+                string groupName = (inputDGV.Columns[changedColumn].HeaderCell.Value).ToString();
+                ringIndex = Convert.ToInt32(inputDGV.Rows[changedRow].HeaderCell.Value);
+                label_selectedGroup.Text = groupName;
+                label_selectedRing.Text = ringIndex.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void fillTimetableDataGrid(DataGridView[] dgvArray)
+        {
+            for (int i = 0; i < dgvArray.Length; i++)
+            {
+                drawDataGrid(dgvArray[i]);
+            }
+        }
+        private void drawDataGrid(DataGridView dgv)
+        {
+            dgv.RowCount = app.getScalarCount(Queries.selectCountRings, connect);
+            dgv.ColumnCount = app.getScalarCount(Queries.selectCountGroups, connect);
+            string[] helpArray = new string[dgv.ColumnCount];
+            List<string> groupNameForHeaders = app.getGroupList(Queries.selectGroupName, connect);
+            for (int i = 0; i < dgv.RowCount; i++)
+            {
+                dgv.Rows[i].HeaderCell.Value = (i + 1).ToString();
+            }
+            int j = 0;
+            foreach (string gName in groupNameForHeaders)
+            {
+                helpArray[j] = gName;
+                j++;
+            }
+            for (int i = 0; i < dgv.ColumnCount; i++)
+            {
+                dgv.Columns[i].HeaderCell.Value = helpArray[i];
+            }
+        }
+        private void fillTable(string[] lessons, List<int> r, List<int> g, List<int> d)
+        {
+            for (int i = 0; i < lessons.Length; i++)
+            {
+                dgvWeekArray[d[i] - 1].Rows[r[i] - 1].Cells[g[i] - 1].Value = lessons[i];
+            }
+        }
+         
+        private void button_addLesson_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox_discipline.Text != "" && comboBox_room.Text != "" && comboBox_Lecturer.Text != "" && label_selectedGroup.Text != "" && label_selectedRing.Text != "")
+                {
+                    //написать
+                    showDataBase();
+                }
+                else
+                {
+                    MessageBox.Show("Заполните поля!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+
 
         #region Общие методы (common methods)
         private void showDataBase()
