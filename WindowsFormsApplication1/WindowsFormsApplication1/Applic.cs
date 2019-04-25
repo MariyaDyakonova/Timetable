@@ -17,6 +17,18 @@ namespace WindowsFormsApplication1
             object count = command.ExecuteScalar();
             return Convert.ToInt32(count);
         }
+
+        public void getSqlWithAliasFor1Object(object titleObj, string ObjAlias, string query, MySqlConnection con)
+        {
+
+
+            var command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue(ObjAlias, titleObj);
+            command.ExecuteNonQuery(); //просто выполняет sql-выражение и возвращает количество измененных записей.
+
+
+        }
+
         public void getSqlWithAliasFor2Object(object titleFirstObj, string FirstObjAlias, object titleSecondObj, string SecondObjAlias, string query, MySqlConnection con)
         {
             var command = new MySqlCommand(query, con);

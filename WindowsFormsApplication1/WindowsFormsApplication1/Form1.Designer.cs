@@ -658,6 +658,7 @@
             this.button_updateGroup.TabIndex = 14;
             this.button_updateGroup.Text = "Изменить группу";
             this.button_updateGroup.UseVisualStyleBackColor = true;
+            this.button_updateGroup.Click += new System.EventHandler(this.button_updateGroup_Click);
             // 
             // button_addGroup
             // 
@@ -668,6 +669,7 @@
             this.button_addGroup.TabIndex = 13;
             this.button_addGroup.Text = "Добавить группу";
             this.button_addGroup.UseVisualStyleBackColor = true;
+            this.button_addGroup.Click += new System.EventHandler(this.button_addGroup_Click);
             // 
             // dGV_groups
             // 

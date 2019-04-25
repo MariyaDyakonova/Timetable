@@ -4,4 +4,8 @@
 Дьяконова М.А, Пастухова О.В
 ## Ссылки
 * ссылка на Trello: https://trello.com/b/iefcpoGE/техпрог
-* ссылка на Miro: https://realtimeboard.com/app/board/o9J_kxmRfIg=/
+* ссылка на Miro:  Kanban https://realtimeboard.com/app/board/o9J_kxmRfIg=/
+* Функциональная модель: https://miro.com/app/board/o9J_kxmY2-o=/
+## Диаграммы
+В папке "Диаграммы" данного репозитория размещены диаграммы последовательности, коммуникации, состояния, деятельности, и Use Case
+

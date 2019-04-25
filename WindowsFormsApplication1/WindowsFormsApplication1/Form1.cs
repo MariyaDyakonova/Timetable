@@ -140,8 +140,6 @@ namespace TimeTableProject
         }
         
 
-        //кнопка удалить преподавателя
-        private void button_deleteLect_Click(object sender, EventArgs e)
         {
             //надо доделать
             tb_lectName.Clear();
