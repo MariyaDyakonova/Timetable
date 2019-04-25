@@ -42,22 +42,5 @@ namespace WindowsFormsApplication1
             return ds.Tables[0];
         }
 
-        public List<string> getGroupList(string query, MySqlConnection con)
-        {
-            MySqlCommand command = new MySqlCommand(query, con);
-            MySqlDataReader reader = command.ExecuteReader();
-            List<string> ourList = new List<string>();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    ourList.Add(reader.GetString(0));
-                }
-            }
-            reader.Close();
-            return ourList;
-        }
-            
     }
 }
-
