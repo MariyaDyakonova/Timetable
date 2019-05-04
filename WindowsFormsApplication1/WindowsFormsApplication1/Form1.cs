@@ -31,6 +31,7 @@ namespace TimeTableProject
             InitializeComponent();
             changedRow = -1;
             myIndex = -1;
+            dGV_help2.Visible = true;
 
             try
             {
@@ -134,7 +135,7 @@ namespace TimeTableProject
                 MessageBox.Show(ex.Message);
             }
         }
-
+        #region Группа (Group) 
         private void button_addGroup_Click(object sender, EventArgs e)
         {
             try
@@ -145,6 +146,7 @@ namespace TimeTableProject
                     try
                     {
                         app.getSqlWithAliasFor1Object(tB_groupName.Text, "@groupName", Queries.insertGroup, connect);
+                        showDataBase();
                         //метод показывает бд
                     }
 
@@ -210,6 +212,8 @@ namespace TimeTableProject
         #region Дисциплины для конкретного преподавателя
         private void button_addDiscForLect_Click(object sender, EventArgs e)
         {
+           
+
             tb_lectName.Clear();
             tB_lectSurname.Clear();
             tB_lectPatro.Clear();
@@ -286,6 +290,133 @@ namespace TimeTableProject
             }
         }
 
+        private void button_addDisc_Click(object sender, EventArgs e)
+        {
+            showDataBase();
+            try
+            {
+                
+                if (comboBox_typeOfDisc.Text != "" && tB_discName.Text != "")
+                {
+                    string discName = tB_discName.Text;
+                    string discType = comboBox_typeOfDisc.Text;
+                    string sqlForDiscType = "SELECT Type_ID FROM facultytimetable.typeOfDiscipline WHERE Type_name LIKE '" + discType + "';";
+                    dGV_help2.DataSource = app.fillDataTable(sqlForDiscType, connect, ref commonDataAdapter, ref commonDataSet);
+                    int discTypeIndex = Convert.ToInt32(dGV_help2.Rows[0].Cells[0].Value);
+                    app.getSqlWithAliasFor2Object(discName, "@disciplineName", discTypeIndex, "@typeDiscID", Queries.insertDiscipline, connect);
+                    tB_discName.Clear();
+                    showDataBase();
+                }
+                else
+                {
+                    MessageBox.Show("Заполните поля!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Ring_Click(object sender, EventArgs e)
+        {
+            DateTime t = new DateTime(2019, 5,10 , 9, 35, 0);
+            string[,] a = new string[7, 2];
+            for( int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 1; j++)
+                {
+
+                    a[i, j] = (i + 1).ToString();
+                }
+                
+            }
+            for (int i = 0; i < 1; i++)
+            {
+
+                int m = t.Hour+t.Minute;
+
+                a[i, 1] = m.ToString();
+            }
+
+            dgv.RowCount = 7;
+            dgv.ColumnCount = 2;
+            for(int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    dgv.Rows[i].Cells[j].Value = a[i,0].ToString();
+                }
+            }
+        }
+
+        private void button_deleteDisc_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                if (comboBox_typeOfDisc.Text != "" && tB_discName.Text != "")
+                {
+                    app.getSqlWithAliasFor1Object(myIndex, "@discID", Queries.deleteDiscipline, connect);
+                    tB_discName.Clear();
+                    showDataBase();
+                    myIndex = -1;
+                   
+                }
+                else
+                {
+                    MessageBox.Show("Заполните поля!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dGV_Discipline_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                changedRow = dGV_Discipline.SelectedCells[0].RowIndex;
+                myIndex = Convert.ToInt32(dGV_Discipline.Rows[changedRow].Cells[0].Value);
+                tB_discName.Text = dGV_Discipline.Rows[changedRow].Cells[1].Value.ToString();
+                comboBox_typeOfDisc.Text = dGV_Discipline.Rows[changedRow].Cells[2].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_updateDisc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox_typeOfDisc.Text != "" && tB_discName.Text != "")
+                {
+                    string discName = tB_discName.Text;
+                    string discType = comboBox_typeOfDisc.Text;
+                    string sqlForDiscType = "SELECT Type_ID FROM facultytimetable.typeofdiscipline WHERE Type_name LIKE '" + discType + "';";
+                    dGV_help2.DataSource = app.fillDataTable(sqlForDiscType, connect, ref commonDataAdapter, ref commonDataSet);
+                    int discTypeIndex = Convert.ToInt32(dGV_help2.Rows[0].Cells[0].Value);
+                    app.getSqlWithAliasFor3Object(discName, "@disciplineName", discTypeIndex, "@typeDiscID", myIndex, "@discID", Queries.updateDiscipline, connect);
+                    tB_discName.Clear();
+                    myIndex = -1;
+                    showDataBase();
+                }
+                else
+                {
+                    MessageBox.Show("Заполните поля!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void button_deleteRoom_Click(object sender, EventArgs e)
         {
             try
@@ -321,9 +452,10 @@ namespace TimeTableProject
 
 
         #region Общие методы (common methods)
+
         private void showDataBase()
         {
-            dGV_Rings.DataSource = app.fillDataTable(Queries.selectRings, connect, ref commonDataAdapter, ref commonDataSet);
+           // dGV_Rings.DataSource = app.fillDataTable(Queries.selectRings, connect, ref commonDataAdapter, ref commonDataSet);
             dGV_Lecturer.DataSource = app.fillDataTable(Queries.selectLecturer, connect, ref commonDataAdapter, ref commonDataSet);
             dGV_Lecturer.Columns[0].Width = 30;
             dGV_Rooms.DataSource = app.fillDataTable(Queries.selectRoomWithType, connect, ref commonDataAdapter, ref commonDataSet);
@@ -343,7 +475,8 @@ namespace TimeTableProject
         }
         private void drawDataGrid(DataGridView dgv)
         {
-            dgv.RowCount = app.getScalarCount(Queries.selectCountRings, connect);
+
+           // dgv.RowCount = app.getScalarCount(Queries.selectCountRings, connect);
             dgv.ColumnCount = app.getScalarCount(Queries.selectCountGroups, connect);
             string[] helpArray = new string[dgv.ColumnCount];
             List<string> groupNameForHeaders = app.getGroupList(Queries.selectGroupName, connect);
@@ -366,3 +499,4 @@ namespace TimeTableProject
     }
 }
 
+#endregion

@@ -6,7 +6,7 @@ create table FacultyTimetable.TypeOfRoom(
     Type_name varchar(80) not null unique
 );
 
-create table FacultyTimetable.TypeOfDiscipline(
+create table FacultyTimetable.TypeOfDicsipline(
 	Type_ID integer(10) primary key auto_increment,
     Type_name varchar(80) not null unique
 );

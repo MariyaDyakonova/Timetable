@@ -64,6 +64,8 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.dGV_tabSaturday = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Ring = new System.Windows.Forms.Button();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -116,6 +118,7 @@
             this.comboBox_roomType = new System.Windows.Forms.ComboBox();
             this.dGV_Rooms = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.dGV_help2 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -138,6 +141,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabSaturday)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_groups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Rings)).BeginInit();
@@ -148,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Discipline)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_help2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -570,6 +575,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Ring);
+            this.tabPage2.Controls.Add(this.dgv);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.panel1);
@@ -582,6 +589,25 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Звонки и группы";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Ring
+            // 
+            this.Ring.Location = new System.Drawing.Point(310, 262);
+            this.Ring.Name = "Ring";
+            this.Ring.Size = new System.Drawing.Size(116, 46);
+            this.Ring.TabIndex = 19;
+            this.Ring.Text = "Отобразить звонки";
+            this.Ring.UseVisualStyleBackColor = true;
+            this.Ring.Click += new System.EventHandler(this.Ring_Click);
+            // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(57, 82);
+            this.dgv.Name = "dgv";
+            this.dgv.RowTemplate.Height = 24;
+            this.dgv.Size = new System.Drawing.Size(240, 150);
+            this.dgv.TabIndex = 20;
             // 
             // label18
             // 
@@ -937,6 +963,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.SeaShell;
+            this.tabPage4.Controls.Add(this.dGV_help2);
             this.tabPage4.Controls.Add(this.label19);
             this.tabPage4.Controls.Add(this.button_excel);
             this.tabPage4.Controls.Add(this.label4);
@@ -1021,6 +1048,7 @@
             this.button_deleteDisc.TabIndex = 8;
             this.button_deleteDisc.Text = "Удалить дисциплину";
             this.button_deleteDisc.UseVisualStyleBackColor = true;
+            this.button_deleteDisc.Click += new System.EventHandler(this.button_deleteDisc_Click);
             // 
             // button_updateDisc
             // 
@@ -1031,6 +1059,7 @@
             this.button_updateDisc.TabIndex = 7;
             this.button_updateDisc.Text = "Изменить дисциплину";
             this.button_updateDisc.UseVisualStyleBackColor = true;
+            this.button_updateDisc.Click += new System.EventHandler(this.button_updateDisc_Click);
             // 
             // button_addDisc
             // 
@@ -1041,6 +1070,7 @@
             this.button_addDisc.TabIndex = 4;
             this.button_addDisc.Text = "Добавить дисциплину";
             this.button_addDisc.UseVisualStyleBackColor = true;
+            this.button_addDisc.Click += new System.EventHandler(this.button_addDisc_Click);
             // 
             // dGV_Discipline
             // 
@@ -1054,6 +1084,7 @@
             this.dGV_Discipline.ReadOnly = true;
             this.dGV_Discipline.Size = new System.Drawing.Size(479, 326);
             this.dGV_Discipline.TabIndex = 0;
+            this.dGV_Discipline.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_Discipline_MouseDoubleClick);
             // 
             // tabPage5
             // 
@@ -1169,6 +1200,18 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
             // 
+            // dGV_help2
+            // 
+            this.dGV_help2.AllowUserToAddRows = false;
+            this.dGV_help2.AllowUserToDeleteRows = false;
+            this.dGV_help2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_help2.Location = new System.Drawing.Point(1051, 341);
+            this.dGV_help2.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_help2.Name = "dGV_help2";
+            this.dGV_help2.ReadOnly = true;
+            this.dGV_help2.Size = new System.Drawing.Size(68, 28);
+            this.dGV_help2.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1203,6 +1246,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabSaturday)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_groups)).EndInit();
@@ -1217,6 +1261,7 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_help2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1311,6 +1356,9 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Button Ring;
+        private System.Windows.Forms.DataGridView dGV_help2;
     }
 }
 
