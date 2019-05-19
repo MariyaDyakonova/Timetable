@@ -81,7 +81,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button_delDiscForLect = new System.Windows.Forms.Button();
-            this.button_updDiscForLect = new System.Windows.Forms.Button();
             this.button_addDiscForLect = new System.Windows.Forms.Button();
             this.comboBox_testDiscipline = new System.Windows.Forms.ComboBox();
             this.label_helpDiscID = new System.Windows.Forms.Label();
@@ -120,6 +119,7 @@
             this.comboBox_roomType = new System.Windows.Forms.ComboBox();
             this.dGV_Rooms = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.dGV_help1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -154,6 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Discipline)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_help1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -730,7 +731,6 @@
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.button_delDiscForLect);
-            this.tabPage3.Controls.Add(this.button_updDiscForLect);
             this.tabPage3.Controls.Add(this.button_addDiscForLect);
             this.tabPage3.Controls.Add(this.comboBox_testDiscipline);
             this.tabPage3.Controls.Add(this.label_helpDiscID);
@@ -788,7 +788,7 @@
             // 
             // button_delDiscForLect
             // 
-            this.button_delDiscForLect.Location = new System.Drawing.Point(926, 326);
+            this.button_delDiscForLect.Location = new System.Drawing.Point(886, 321);
             this.button_delDiscForLect.Margin = new System.Windows.Forms.Padding(4);
             this.button_delDiscForLect.Name = "button_delDiscForLect";
             this.button_delDiscForLect.Size = new System.Drawing.Size(142, 38);
@@ -797,20 +797,9 @@
             this.button_delDiscForLect.UseVisualStyleBackColor = true;
             this.button_delDiscForLect.Click += new System.EventHandler(this.button_delDiscForLect_Click);
             // 
-            // button_updDiscForLect
-            // 
-            this.button_updDiscForLect.Location = new System.Drawing.Point(768, 326);
-            this.button_updDiscForLect.Margin = new System.Windows.Forms.Padding(4);
-            this.button_updDiscForLect.Name = "button_updDiscForLect";
-            this.button_updDiscForLect.Size = new System.Drawing.Size(150, 38);
-            this.button_updDiscForLect.TabIndex = 15;
-            this.button_updDiscForLect.Text = "Изменить предмет";
-            this.button_updDiscForLect.UseVisualStyleBackColor = true;
-            this.button_updDiscForLect.Click += new System.EventHandler(this.button_updDiscForLect_Click);
-            // 
             // button_addDiscForLect
             // 
-            this.button_addDiscForLect.Location = new System.Drawing.Point(605, 326);
+            this.button_addDiscForLect.Location = new System.Drawing.Point(687, 321);
             this.button_addDiscForLect.Margin = new System.Windows.Forms.Padding(4);
             this.button_addDiscForLect.Name = "button_addDiscForLect";
             this.button_addDiscForLect.Size = new System.Drawing.Size(155, 38);
@@ -1105,6 +1094,7 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.SeaShell;
+            this.tabPage5.Controls.Add(this.dGV_help1);
             this.tabPage5.Controls.Add(this.label20);
             this.tabPage5.Controls.Add(this.button_deleteRoom);
             this.tabPage5.Controls.Add(this.button_updateRoom);
@@ -1227,6 +1217,19 @@
             this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dGV_help1
+            // 
+            this.dGV_help1.AllowUserToAddRows = false;
+            this.dGV_help1.AllowUserToDeleteRows = false;
+            this.dGV_help1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_help1.Location = new System.Drawing.Point(1039, 353);
+            this.dGV_help1.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_help1.Name = "dGV_help1";
+            this.dGV_help1.ReadOnly = true;
+            this.dGV_help1.Size = new System.Drawing.Size(68, 28);
+            this.dGV_help1.TabIndex = 21;
             // 
             // Form1
             // 
@@ -1278,6 +1281,7 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_help1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1331,7 +1335,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button_delDiscForLect;
-        private System.Windows.Forms.Button button_updDiscForLect;
         private System.Windows.Forms.Button button_addDiscForLect;
         private System.Windows.Forms.ComboBox comboBox_testDiscipline;
         private System.Windows.Forms.Label label_helpDiscID;
@@ -1376,6 +1379,7 @@
         private System.Windows.Forms.Button Ring;
         private System.Windows.Forms.DataGridView dGV_help2;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridView dGV_help1;
     }
 }
 
