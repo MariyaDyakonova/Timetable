@@ -45,8 +45,16 @@ namespace WindowsFormsApplication1
             command.Parameters.AddWithValue(ThirdObjAlias, titleThirdObj);
             command.ExecuteNonQuery();
         }
- 
 
+        public void getSqlWithAliasFor4Object(object titleFirstObj, string FirstObjAlias, object titleSecondObj, string SecondObjAlias, object titleThirdObj, string ThirdObjAlias, object titleFourthObj, string FourthObjAlias, string query, MySqlConnection con)
+        {
+            var command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue(FirstObjAlias, titleFirstObj);
+            command.Parameters.AddWithValue(SecondObjAlias, titleSecondObj);
+            command.Parameters.AddWithValue(ThirdObjAlias, titleThirdObj);
+            command.Parameters.AddWithValue(FourthObjAlias, titleFourthObj);
+            command.ExecuteNonQuery();
+        }
         public DataTable fillDataTable(string query, MySqlConnection con, ref MySqlDataAdapter da, ref DataSet ds)
         {
             da = new MySqlDataAdapter(query, con);

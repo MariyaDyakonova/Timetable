@@ -103,7 +103,6 @@ namespace TimeTableProject
         }
 
 
-
         private void button_addLect_Click(object sender, EventArgs e)
         {
             try
@@ -135,6 +134,46 @@ namespace TimeTableProject
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button_updateLect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tb_lectName.Text != "" && tB_lectSurname.Text != "" && tB_lectPatro.Text != "")
+                {
+                    try
+                    {
+                        app.getSqlWithAliasFor4Object(tb_lectName.Text, "@lectName", tB_lectSurname.Text, "@lectSurname", tB_lectPatro.Text, "@lectPatro", myIndex, "@lectID", Queries.updateLecturer, connect);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    showDataBase();
+                    tb_lectName.Clear();
+                    tB_lectSurname.Clear();
+                    tB_lectPatro.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Заполните поля!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_deleteLect_Click(object sender, EventArgs e)
+        {
+            app.getSqlWithAliasFor1Object(myIndex, "@lectID", Queries.deleteLecturer, connect);
+            tb_lectName.Clear();
+            tB_lectSurname.Clear();
+            tB_lectPatro.Clear();
+        }
+
+
         #region Группа (Group) 
         private void button_addGroup_Click(object sender, EventArgs e)
         {
@@ -416,6 +455,12 @@ namespace TimeTableProject
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button_addLesson_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void button_deleteRoom_Click(object sender, EventArgs e)
         {

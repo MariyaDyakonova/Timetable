@@ -98,6 +98,7 @@
             this.dGV_DiscForLecturer = new System.Windows.Forms.DataGridView();
             this.dGV_Lecturer = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dGV_help2 = new System.Windows.Forms.DataGridView();
             this.label19 = new System.Windows.Forms.Label();
             this.button_excel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -109,6 +110,7 @@
             this.button_addDisc = new System.Windows.Forms.Button();
             this.dGV_Discipline = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
             this.button_deleteRoom = new System.Windows.Forms.Button();
             this.button_updateRoom = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -118,7 +120,6 @@
             this.comboBox_roomType = new System.Windows.Forms.ComboBox();
             this.dGV_Rooms = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.dGV_help2 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -149,10 +150,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_DiscForLecturer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Lecturer)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_help2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Discipline)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_help2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -281,6 +282,7 @@
             this.button_addLesson.TabIndex = 16;
             this.button_addLesson.Text = "Добавить занятие";
             this.button_addLesson.UseVisualStyleBackColor = true;
+            this.button_addLesson.Click += new System.EventHandler(this.button_addLesson_Click);
             // 
             // label11
             // 
@@ -909,6 +911,7 @@
             this.button_deleteLect.TabIndex = 9;
             this.button_deleteLect.Text = "Удалить";
             this.button_deleteLect.UseVisualStyleBackColor = true;
+            this.button_deleteLect.Click += new System.EventHandler(this.button_deleteLect_Click);
             // 
             // button_updateLect
             // 
@@ -919,6 +922,7 @@
             this.button_updateLect.TabIndex = 8;
             this.button_updateLect.Text = "Изменить";
             this.button_updateLect.UseVisualStyleBackColor = true;
+            this.button_updateLect.Click += new System.EventHandler(this.button_updateLect_Click);
             // 
             // button_addLect
             // 
@@ -980,6 +984,18 @@
             this.tabPage4.Size = new System.Drawing.Size(1135, 399);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Дисциплины";
+            // 
+            // dGV_help2
+            // 
+            this.dGV_help2.AllowUserToAddRows = false;
+            this.dGV_help2.AllowUserToDeleteRows = false;
+            this.dGV_help2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_help2.Location = new System.Drawing.Point(1051, 341);
+            this.dGV_help2.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_help2.Name = "dGV_help2";
+            this.dGV_help2.ReadOnly = true;
+            this.dGV_help2.Size = new System.Drawing.Size(68, 28);
+            this.dGV_help2.TabIndex = 16;
             // 
             // label19
             // 
@@ -1089,6 +1105,7 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.SeaShell;
+            this.tabPage5.Controls.Add(this.label20);
             this.tabPage5.Controls.Add(this.button_deleteRoom);
             this.tabPage5.Controls.Add(this.button_updateRoom);
             this.tabPage5.Controls.Add(this.label2);
@@ -1104,9 +1121,20 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Аудитории";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(643, 48);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(339, 20);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Редактирование списка аудиторий";
+            // 
             // button_deleteRoom
             // 
-            this.button_deleteRoom.Location = new System.Drawing.Point(763, 215);
+            this.button_deleteRoom.Location = new System.Drawing.Point(781, 257);
             this.button_deleteRoom.Margin = new System.Windows.Forms.Padding(4);
             this.button_deleteRoom.Name = "button_deleteRoom";
             this.button_deleteRoom.Size = new System.Drawing.Size(172, 28);
@@ -1117,7 +1145,7 @@
             // 
             // button_updateRoom
             // 
-            this.button_updateRoom.Location = new System.Drawing.Point(763, 179);
+            this.button_updateRoom.Location = new System.Drawing.Point(781, 221);
             this.button_updateRoom.Margin = new System.Windows.Forms.Padding(4);
             this.button_updateRoom.Name = "button_updateRoom";
             this.button_updateRoom.Size = new System.Drawing.Size(172, 28);
@@ -1129,7 +1157,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(718, 95);
+            this.label2.Location = new System.Drawing.Point(736, 137);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 17);
@@ -1139,7 +1167,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(626, 62);
+            this.label1.Location = new System.Drawing.Point(644, 104);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 17);
@@ -1148,7 +1176,7 @@
             // 
             // button_addRoom
             // 
-            this.button_addRoom.Location = new System.Drawing.Point(763, 143);
+            this.button_addRoom.Location = new System.Drawing.Point(781, 185);
             this.button_addRoom.Margin = new System.Windows.Forms.Padding(4);
             this.button_addRoom.Name = "button_addRoom";
             this.button_addRoom.Size = new System.Drawing.Size(172, 28);
@@ -1159,7 +1187,7 @@
             // 
             // tB_roomNumber
             // 
-            this.tB_roomNumber.Location = new System.Drawing.Point(763, 59);
+            this.tB_roomNumber.Location = new System.Drawing.Point(781, 101);
             this.tB_roomNumber.Margin = new System.Windows.Forms.Padding(4);
             this.tB_roomNumber.Name = "tB_roomNumber";
             this.tB_roomNumber.Size = new System.Drawing.Size(172, 22);
@@ -1168,7 +1196,7 @@
             // comboBox_roomType
             // 
             this.comboBox_roomType.FormattingEnabled = true;
-            this.comboBox_roomType.Location = new System.Drawing.Point(763, 92);
+            this.comboBox_roomType.Location = new System.Drawing.Point(781, 134);
             this.comboBox_roomType.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_roomType.Name = "comboBox_roomType";
             this.comboBox_roomType.Size = new System.Drawing.Size(172, 24);
@@ -1180,11 +1208,11 @@
             this.dGV_Rooms.AllowUserToDeleteRows = false;
             this.dGV_Rooms.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_Rooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_Rooms.Location = new System.Drawing.Point(62, 29);
+            this.dGV_Rooms.Location = new System.Drawing.Point(13, 48);
             this.dGV_Rooms.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_Rooms.Name = "dGV_Rooms";
             this.dGV_Rooms.ReadOnly = true;
-            this.dGV_Rooms.Size = new System.Drawing.Size(505, 333);
+            this.dGV_Rooms.Size = new System.Drawing.Size(498, 333);
             this.dGV_Rooms.TabIndex = 0;
             this.dGV_Rooms.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGV_Rooms_MouseDoubleClick);
             // 
@@ -1199,18 +1227,6 @@
             this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
-            // 
-            // dGV_help2
-            // 
-            this.dGV_help2.AllowUserToAddRows = false;
-            this.dGV_help2.AllowUserToDeleteRows = false;
-            this.dGV_help2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_help2.Location = new System.Drawing.Point(1051, 341);
-            this.dGV_help2.Margin = new System.Windows.Forms.Padding(4);
-            this.dGV_help2.Name = "dGV_help2";
-            this.dGV_help2.ReadOnly = true;
-            this.dGV_help2.Size = new System.Drawing.Size(68, 28);
-            this.dGV_help2.TabIndex = 16;
             // 
             // Form1
             // 
@@ -1257,11 +1273,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Lecturer)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_help2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Discipline)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_help2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1359,6 +1375,7 @@
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button Ring;
         private System.Windows.Forms.DataGridView dGV_help2;
+        private System.Windows.Forms.Label label20;
     }
 }
 
