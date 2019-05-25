@@ -141,6 +141,14 @@ namespace WindowsFormsApplication1
             return outputArray;
         }
 
+         public void CorrectInput(System.Windows.Forms.KeyPressEventArgs e)
+        {
+            char l = e.KeyChar;
+            if ((l < 'А' || l > 'я') && (l < 'A' || l > 'z') && l != '\b' && l != '.')
+            {
+                e.Handled = true;
+            }
+        }
        
     }
 }

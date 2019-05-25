@@ -197,9 +197,9 @@
             this.label14.Location = new System.Drawing.Point(4, 18);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 17);
+            this.label14.Size = new System.Drawing.Size(98, 17);
             this.label14.TabIndex = 8;
-            this.label14.Text = "Курс.Груп";
+            this.label14.Text = "Курс.Группа: ";
             // 
             // label_selectedRing
             // 
@@ -216,9 +216,9 @@
             this.label15.Location = new System.Drawing.Point(4, 59);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(60, 17);
+            this.label15.Size = new System.Drawing.Size(64, 17);
             this.label15.TabIndex = 9;
-            this.label15.Text = "№ пары";
+            this.label15.Text = "№ пары:";
             // 
             // label_selectedGroup
             // 
@@ -519,7 +519,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(468, 14);
+            this.label18.Location = new System.Drawing.Point(777, 47);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(222, 20);
@@ -740,6 +740,7 @@
             this.tB_lectPatro.Name = "tB_lectPatro";
             this.tB_lectPatro.Size = new System.Drawing.Size(219, 22);
             this.tB_lectPatro.TabIndex = 10;
+            this.tB_lectPatro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressPatronymic);
             // 
             // tb_lectName
             // 
@@ -748,6 +749,7 @@
             this.tb_lectName.Name = "tb_lectName";
             this.tb_lectName.Size = new System.Drawing.Size(219, 22);
             this.tb_lectName.TabIndex = 10;
+            this.tb_lectName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressName);
             // 
             // tB_lectSurname
             // 
@@ -756,6 +758,7 @@
             this.tB_lectSurname.Name = "tB_lectSurname";
             this.tB_lectSurname.Size = new System.Drawing.Size(219, 22);
             this.tB_lectSurname.TabIndex = 10;
+            this.tB_lectSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // button_deleteLect
             // 
@@ -856,7 +859,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(689, 21);
+            this.label19.Location = new System.Drawing.Point(640, 43);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(340, 20);
@@ -910,6 +913,7 @@
             this.tB_discName.Name = "tB_discName";
             this.tB_discName.Size = new System.Drawing.Size(255, 22);
             this.tB_discName.TabIndex = 9;
+            this.tB_discName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressDisciplineName);
             // 
             // button_deleteDisc
             // 

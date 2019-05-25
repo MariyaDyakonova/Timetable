@@ -263,6 +263,20 @@ namespace TimeTableProject
                 MessageBox.Show(ex.Message);
             }
         }
+        private void KeyPress(object sender, KeyPressEventArgs e)
+        {
+            app.CorrectInput(e);
+        }
+
+        private void KeyPressName(object sender, KeyPressEventArgs e)
+        {
+            app.CorrectInput(e);
+        }
+
+        private void KeyPressPatronymic(object sender, KeyPressEventArgs e)
+        {
+            app.CorrectInput(e);
+        }
         #endregion
 
         #region Group 
@@ -371,7 +385,8 @@ namespace TimeTableProject
 
         #endregion
 
-        #region Дисциплины для конкретного преподавателя
+        #region Discipline for one lecturer
+
         private void button_addDiscForLect_Click(object sender, EventArgs e)
         {
             try
@@ -441,7 +456,7 @@ namespace TimeTableProject
         }
         #endregion
 
-        #region Аудитория (Room)
+        #region Room
         private void button_addRoom_Click(object sender, EventArgs e)
         {
             try
@@ -507,6 +522,10 @@ namespace TimeTableProject
                     showDataBase();
                     myIndex = -1;
                 }
+                else
+                {
+                    MessageBox.Show("Выберите аудиторию для удаления!");
+                }
             }
             catch (Exception ex)
             {
@@ -530,7 +549,9 @@ namespace TimeTableProject
         }
 
         #endregion
-        #region Дисциплины
+
+        #region Discipline
+
         private void button_addDisc_Click(object sender, EventArgs e)
         {
             showDataBase();
@@ -683,7 +704,14 @@ namespace TimeTableProject
             }
             ExcelApp.Visible = true;
         }
+
+
+        private void KeyPressDisciplineName(object sender, KeyPressEventArgs e)
+        {
+            app.CorrectInput(e);
+        }
         #endregion
+
         private void button_addLesson_Click(object sender, EventArgs e)
         {
             try
@@ -979,7 +1007,7 @@ namespace TimeTableProject
         private void drawDataGrid(DataGridView dgv)
         {
 
-            dgv.RowCount = app.getScalarCount(Queries.selectCountRings, connect);
+           // dgv.RowCount = app.getScalarCount(Queries.selectCountRings, connect);
             dgv.ColumnCount = app.getScalarCount(Queries.selectCountGroups, connect);
             string[] helpArray = new string[dgv.ColumnCount];
             List<string> groupNameForHeaders = app.getGroupList(Queries.selectGroupName, connect);
