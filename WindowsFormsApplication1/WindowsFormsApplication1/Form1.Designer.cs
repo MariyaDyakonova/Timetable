@@ -47,35 +47,26 @@
             this.comboBox_discipline = new System.Windows.Forms.ComboBox();
             this.tabControl_Days = new System.Windows.Forms.TabControl();
             this.tabPage_Monday = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dGV_tabMonday = new System.Windows.Forms.DataGridView();
             this.tabPage_Tuesday = new System.Windows.Forms.TabPage();
             this.dGV_tabTuesday = new System.Windows.Forms.DataGridView();
             this.tabPage_Wednesday = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dGV_tabWednesday = new System.Windows.Forms.DataGridView();
             this.tabPage_Thursday = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dGV_tabThursday = new System.Windows.Forms.DataGridView();
             this.tabPage_Friday = new System.Windows.Forms.TabPage();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.dGV_tabFriday = new System.Windows.Forms.DataGridView();
             this.tabPage_Saturday = new System.Windows.Forms.TabPage();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.dGV_tabSaturday = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Ring = new System.Windows.Forms.Button();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tB_groupName = new System.Windows.Forms.TextBox();
             this.button_deleteGroup = new System.Windows.Forms.Button();
             this.button_updateGroup = new System.Windows.Forms.Button();
             this.button_addGroup = new System.Windows.Forms.Button();
             this.dGV_groups = new System.Windows.Forms.DataGridView();
-            this.dGV_Rings = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -109,6 +100,7 @@
             this.button_addDisc = new System.Windows.Forms.Button();
             this.dGV_Discipline = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dGV_help1 = new System.Windows.Forms.DataGridView();
             this.label20 = new System.Windows.Forms.Label();
             this.button_deleteRoom = new System.Windows.Forms.Button();
             this.button_updateRoom = new System.Windows.Forms.Button();
@@ -119,33 +111,25 @@
             this.comboBox_roomType = new System.Windows.Forms.ComboBox();
             this.dGV_Rooms = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.dGV_help1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl_Days.SuspendLayout();
             this.tabPage_Monday.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabMonday)).BeginInit();
             this.tabPage_Tuesday.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabTuesday)).BeginInit();
             this.tabPage_Wednesday.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabWednesday)).BeginInit();
             this.tabPage_Thursday.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabThursday)).BeginInit();
             this.tabPage_Friday.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabFriday)).BeginInit();
             this.tabPage_Saturday.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabSaturday)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_groups)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_Rings)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_DiscForLecturer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Lecturer)).BeginInit();
@@ -153,8 +137,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_help2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Discipline)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_help1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -173,6 +157,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.SeaShell;
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.button_excel2);
             this.tabPage1.Controls.Add(this.label_dayOfWeek);
@@ -192,7 +177,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1135, 399);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Расписание";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -213,9 +197,9 @@
             this.label14.Location = new System.Drawing.Point(4, 18);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 17);
+            this.label14.Size = new System.Drawing.Size(74, 17);
             this.label14.TabIndex = 8;
-            this.label14.Text = "Группа";
+            this.label14.Text = "Курс.Груп";
             // 
             // label_selectedRing
             // 
@@ -254,6 +238,7 @@
             this.button_excel2.TabIndex = 22;
             this.button_excel2.Text = "Экспорт";
             this.button_excel2.UseVisualStyleBackColor = true;
+            this.button_excel2.Click += new System.EventHandler(this.button_excel2_Click);
             // 
             // label_dayOfWeek
             // 
@@ -273,6 +258,7 @@
             this.button_deleteLesson.TabIndex = 18;
             this.button_deleteLesson.Text = "Удалить занятие";
             this.button_deleteLesson.UseVisualStyleBackColor = true;
+            this.button_deleteLesson.Click += new System.EventHandler(this.button_deleteLesson_Click);
             // 
             // button_addLesson
             // 
@@ -359,7 +345,6 @@
             // 
             // tabPage_Monday
             // 
-            this.tabPage_Monday.Controls.Add(this.dataGridView2);
             this.tabPage_Monday.Controls.Add(this.dGV_tabMonday);
             this.tabPage_Monday.Location = new System.Drawing.Point(4, 25);
             this.tabPage_Monday.Margin = new System.Windows.Forms.Padding(4);
@@ -370,33 +355,18 @@
             this.tabPage_Monday.Text = "Понедельник";
             this.tabPage_Monday.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 2);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(743, 302);
-            this.dataGridView2.TabIndex = 2;
-            // 
             // dGV_tabMonday
             // 
-            this.dGV_tabMonday.AllowUserToAddRows = false;
             this.dGV_tabMonday.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGV_tabMonday.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dGV_tabMonday.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dGV_tabMonday.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_tabMonday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_tabMonday.Location = new System.Drawing.Point(4, 2);
             this.dGV_tabMonday.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_tabMonday.Name = "dGV_tabMonday";
-            this.dGV_tabMonday.ReadOnly = true;
-            this.dGV_tabMonday.Size = new System.Drawing.Size(732, 203);
+            this.dGV_tabMonday.Size = new System.Drawing.Size(761, 266);
             this.dGV_tabMonday.TabIndex = 0;
+            this.dGV_tabMonday.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabMonday_MouseDoubleClick);
             // 
             // tabPage_Tuesday
             // 
@@ -412,21 +382,19 @@
             // 
             // dGV_tabTuesday
             // 
-            this.dGV_tabTuesday.AllowUserToAddRows = false;
             this.dGV_tabTuesday.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGV_tabTuesday.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dGV_tabTuesday.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_tabTuesday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_tabTuesday.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dGV_tabTuesday.Location = new System.Drawing.Point(8, 4);
             this.dGV_tabTuesday.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_tabTuesday.Name = "dGV_tabTuesday";
-            this.dGV_tabTuesday.ReadOnly = true;
-            this.dGV_tabTuesday.Size = new System.Drawing.Size(743, 302);
+            this.dGV_tabTuesday.Size = new System.Drawing.Size(761, 302);
             this.dGV_tabTuesday.TabIndex = 1;
+            this.dGV_tabTuesday.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabTuesday_MouseDoubleClick);
             // 
             // tabPage_Wednesday
             // 
-            this.tabPage_Wednesday.Controls.Add(this.dataGridView3);
             this.tabPage_Wednesday.Controls.Add(this.dGV_tabWednesday);
             this.tabPage_Wednesday.Location = new System.Drawing.Point(4, 25);
             this.tabPage_Wednesday.Margin = new System.Windows.Forms.Padding(4);
@@ -436,35 +404,20 @@
             this.tabPage_Wednesday.Text = "Среда";
             this.tabPage_Wednesday.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dataGridView3.Location = new System.Drawing.Point(4, -28);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(743, 302);
-            this.dataGridView3.TabIndex = 2;
-            // 
             // dGV_tabWednesday
             // 
             this.dGV_tabWednesday.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGV_tabWednesday.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dGV_tabWednesday.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_tabWednesday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_tabWednesday.Location = new System.Drawing.Point(4, 4);
             this.dGV_tabWednesday.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_tabWednesday.Name = "dGV_tabWednesday";
-            this.dGV_tabWednesday.ReadOnly = true;
-            this.dGV_tabWednesday.Size = new System.Drawing.Size(635, 342);
+            this.dGV_tabWednesday.Size = new System.Drawing.Size(757, 268);
             this.dGV_tabWednesday.TabIndex = 1;
+            this.dGV_tabWednesday.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabWednesday_MouseDoubleClick);
             // 
             // tabPage_Thursday
             // 
-            this.tabPage_Thursday.Controls.Add(this.dataGridView4);
             this.tabPage_Thursday.Controls.Add(this.dGV_tabThursday);
             this.tabPage_Thursday.Location = new System.Drawing.Point(4, 25);
             this.tabPage_Thursday.Margin = new System.Windows.Forms.Padding(4);
@@ -474,35 +427,20 @@
             this.tabPage_Thursday.Text = "Четверг";
             this.tabPage_Thursday.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dataGridView4.Location = new System.Drawing.Point(4, -28);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(743, 302);
-            this.dataGridView4.TabIndex = 2;
-            // 
             // dGV_tabThursday
             // 
             this.dGV_tabThursday.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGV_tabThursday.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dGV_tabThursday.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_tabThursday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_tabThursday.Location = new System.Drawing.Point(4, 0);
             this.dGV_tabThursday.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_tabThursday.Name = "dGV_tabThursday";
-            this.dGV_tabThursday.ReadOnly = true;
-            this.dGV_tabThursday.Size = new System.Drawing.Size(639, 342);
+            this.dGV_tabThursday.Size = new System.Drawing.Size(757, 268);
             this.dGV_tabThursday.TabIndex = 1;
+            this.dGV_tabThursday.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabThursday_MouseDoubleClick);
             // 
             // tabPage_Friday
             // 
-            this.tabPage_Friday.Controls.Add(this.dataGridView5);
             this.tabPage_Friday.Controls.Add(this.dGV_tabFriday);
             this.tabPage_Friday.Location = new System.Drawing.Point(4, 25);
             this.tabPage_Friday.Margin = new System.Windows.Forms.Padding(4);
@@ -512,35 +450,21 @@
             this.tabPage_Friday.Text = "Пятница";
             this.tabPage_Friday.UseVisualStyleBackColor = true;
             // 
-            // dataGridView5
-            // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dataGridView5.Location = new System.Drawing.Point(4, -28);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.Size = new System.Drawing.Size(743, 302);
-            this.dataGridView5.TabIndex = 3;
-            // 
             // dGV_tabFriday
             // 
             this.dGV_tabFriday.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGV_tabFriday.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dGV_tabFriday.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_tabFriday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_tabFriday.Location = new System.Drawing.Point(4, 4);
             this.dGV_tabFriday.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_tabFriday.Name = "dGV_tabFriday";
             this.dGV_tabFriday.ReadOnly = true;
-            this.dGV_tabFriday.Size = new System.Drawing.Size(635, 342);
+            this.dGV_tabFriday.Size = new System.Drawing.Size(757, 268);
             this.dGV_tabFriday.TabIndex = 2;
+            this.dGV_tabFriday.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabFriday_MouseDoubleClick);
             // 
             // tabPage_Saturday
             // 
-            this.tabPage_Saturday.Controls.Add(this.dataGridView6);
             this.tabPage_Saturday.Controls.Add(this.dGV_tabSaturday);
             this.tabPage_Saturday.Location = new System.Drawing.Point(4, 25);
             this.tabPage_Saturday.Margin = new System.Windows.Forms.Padding(4);
@@ -550,109 +474,62 @@
             this.tabPage_Saturday.Text = "Суббота";
             this.tabPage_Saturday.UseVisualStyleBackColor = true;
             // 
-            // dataGridView6
-            // 
-            this.dataGridView6.AllowUserToAddRows = false;
-            this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dataGridView6.Location = new System.Drawing.Point(4, -28);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.ReadOnly = true;
-            this.dataGridView6.Size = new System.Drawing.Size(743, 302);
-            this.dataGridView6.TabIndex = 3;
-            // 
             // dGV_tabSaturday
             // 
             this.dGV_tabSaturday.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGV_tabSaturday.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dGV_tabSaturday.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_tabSaturday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_tabSaturday.Location = new System.Drawing.Point(4, 4);
+            this.dGV_tabSaturday.Location = new System.Drawing.Point(-4, 2);
             this.dGV_tabSaturday.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_tabSaturday.Name = "dGV_tabSaturday";
             this.dGV_tabSaturday.ReadOnly = true;
-            this.dGV_tabSaturday.Size = new System.Drawing.Size(635, 342);
+            this.dGV_tabSaturday.Size = new System.Drawing.Size(765, 266);
             this.dGV_tabSaturday.TabIndex = 2;
+            this.dGV_tabSaturday.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_tabSaturday_MouseDoubleClick);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.Ring);
-            this.tabPage2.Controls.Add(this.dgv);
-            this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Controls.Add(this.dGV_Rings);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1135, 399);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Звонки и группы";
+            this.tabPage2.Text = "Группы";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // Ring
-            // 
-            this.Ring.Location = new System.Drawing.Point(310, 262);
-            this.Ring.Name = "Ring";
-            this.Ring.Size = new System.Drawing.Size(116, 46);
-            this.Ring.TabIndex = 19;
-            this.Ring.Text = "Отобразить звонки";
-            this.Ring.UseVisualStyleBackColor = true;
-            this.Ring.Click += new System.EventHandler(this.Ring_Click);
-            // 
-            // dgv
-            // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(57, 82);
-            this.dgv.Name = "dgv";
-            this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(240, 150);
-            this.dgv.TabIndex = 20;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(687, 21);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(222, 20);
-            this.label18.TabIndex = 19;
-            this.label18.Text = "Редактирование групп";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(136, 21);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(199, 20);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Расписание звонков";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.BackColor = System.Drawing.Color.SeaShell;
+            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.tB_groupName);
             this.panel1.Controls.Add(this.button_deleteGroup);
             this.panel1.Controls.Add(this.button_updateGroup);
             this.panel1.Controls.Add(this.button_addGroup);
             this.panel1.Controls.Add(this.dGV_groups);
-            this.panel1.Location = new System.Drawing.Point(523, 59);
+            this.panel1.Location = new System.Drawing.Point(-4, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(505, 262);
+            this.panel1.Size = new System.Drawing.Size(1139, 395);
             this.panel1.TabIndex = 4;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(468, 14);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(222, 20);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "Редактирование групп";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(235, 69);
+            this.label9.Location = new System.Drawing.Point(778, 96);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 17);
@@ -661,7 +538,7 @@
             // 
             // tB_groupName
             // 
-            this.tB_groupName.Location = new System.Drawing.Point(344, 66);
+            this.tB_groupName.Location = new System.Drawing.Point(891, 96);
             this.tB_groupName.Margin = new System.Windows.Forms.Padding(4);
             this.tB_groupName.Name = "tB_groupName";
             this.tB_groupName.Size = new System.Drawing.Size(137, 22);
@@ -669,17 +546,18 @@
             // 
             // button_deleteGroup
             // 
-            this.button_deleteGroup.Location = new System.Drawing.Point(264, 181);
+            this.button_deleteGroup.Location = new System.Drawing.Point(809, 232);
             this.button_deleteGroup.Margin = new System.Windows.Forms.Padding(4);
             this.button_deleteGroup.Name = "button_deleteGroup";
             this.button_deleteGroup.Size = new System.Drawing.Size(219, 28);
             this.button_deleteGroup.TabIndex = 15;
             this.button_deleteGroup.Text = "Удалить группу";
             this.button_deleteGroup.UseVisualStyleBackColor = true;
+            this.button_deleteGroup.Click += new System.EventHandler(this.button_deleteGroup_Click);
             // 
             // button_updateGroup
             // 
-            this.button_updateGroup.Location = new System.Drawing.Point(264, 145);
+            this.button_updateGroup.Location = new System.Drawing.Point(809, 196);
             this.button_updateGroup.Margin = new System.Windows.Forms.Padding(4);
             this.button_updateGroup.Name = "button_updateGroup";
             this.button_updateGroup.Size = new System.Drawing.Size(219, 28);
@@ -690,7 +568,7 @@
             // 
             // button_addGroup
             // 
-            this.button_addGroup.Location = new System.Drawing.Point(264, 110);
+            this.button_addGroup.Location = new System.Drawing.Point(809, 160);
             this.button_addGroup.Margin = new System.Windows.Forms.Padding(4);
             this.button_addGroup.Name = "button_addGroup";
             this.button_addGroup.Size = new System.Drawing.Size(219, 28);
@@ -703,30 +581,19 @@
             // 
             this.dGV_groups.AllowUserToAddRows = false;
             this.dGV_groups.AllowUserToDeleteRows = false;
-            this.dGV_groups.BackgroundColor = System.Drawing.Color.LightYellow;
+            this.dGV_groups.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_groups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_groups.Location = new System.Drawing.Point(24, 17);
+            this.dGV_groups.Location = new System.Drawing.Point(101, 56);
             this.dGV_groups.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_groups.Name = "dGV_groups";
             this.dGV_groups.ReadOnly = true;
-            this.dGV_groups.Size = new System.Drawing.Size(201, 218);
+            this.dGV_groups.Size = new System.Drawing.Size(467, 314);
             this.dGV_groups.TabIndex = 3;
-            // 
-            // dGV_Rings
-            // 
-            this.dGV_Rings.AllowUserToAddRows = false;
-            this.dGV_Rings.AllowUserToDeleteRows = false;
-            this.dGV_Rings.BackgroundColor = System.Drawing.Color.MistyRose;
-            this.dGV_Rings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_Rings.Location = new System.Drawing.Point(37, 59);
-            this.dGV_Rings.Margin = new System.Windows.Forms.Padding(4);
-            this.dGV_Rings.Name = "dGV_Rings";
-            this.dGV_Rings.ReadOnly = true;
-            this.dGV_Rings.Size = new System.Drawing.Size(412, 262);
-            this.dGV_Rings.TabIndex = 2;
+            this.dGV_groups.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_groups_MouseDoubleClick);
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.SeaShell;
             this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label12);
@@ -752,7 +619,6 @@
             this.tabPage3.Size = new System.Drawing.Size(1135, 399);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Преподаватели";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -928,7 +794,7 @@
             // 
             this.dGV_DiscForLecturer.AllowUserToAddRows = false;
             this.dGV_DiscForLecturer.AllowUserToDeleteRows = false;
-            this.dGV_DiscForLecturer.BackgroundColor = System.Drawing.Color.LightYellow;
+            this.dGV_DiscForLecturer.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_DiscForLecturer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_DiscForLecturer.Location = new System.Drawing.Point(605, 49);
             this.dGV_DiscForLecturer.Margin = new System.Windows.Forms.Padding(4);
@@ -942,7 +808,7 @@
             // 
             this.dGV_Lecturer.AllowUserToAddRows = false;
             this.dGV_Lecturer.AllowUserToDeleteRows = false;
-            this.dGV_Lecturer.BackgroundColor = System.Drawing.Color.LightYellow;
+            this.dGV_Lecturer.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_Lecturer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Lecturer.Location = new System.Drawing.Point(17, 49);
             this.dGV_Lecturer.Margin = new System.Windows.Forms.Padding(4);
@@ -1006,6 +872,7 @@
             this.button_excel.TabIndex = 14;
             this.button_excel.Text = "Экспорт";
             this.button_excel.UseVisualStyleBackColor = true;
+            this.button_excel.Click += new System.EventHandler(this.button_excel_Click);
             // 
             // label4
             // 
@@ -1110,6 +977,19 @@
             this.tabPage5.Size = new System.Drawing.Size(1135, 399);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Аудитории";
+            // 
+            // dGV_help1
+            // 
+            this.dGV_help1.AllowUserToAddRows = false;
+            this.dGV_help1.AllowUserToDeleteRows = false;
+            this.dGV_help1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_help1.Location = new System.Drawing.Point(1039, 353);
+            this.dGV_help1.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_help1.Name = "dGV_help1";
+            this.dGV_help1.ReadOnly = true;
+            this.dGV_help1.Size = new System.Drawing.Size(68, 28);
+            this.dGV_help1.TabIndex = 21;
+            this.dGV_help1.Visible = false;
             // 
             // label20
             // 
@@ -1216,20 +1096,7 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dGV_help1
-            // 
-            this.dGV_help1.AllowUserToAddRows = false;
-            this.dGV_help1.AllowUserToDeleteRows = false;
-            this.dGV_help1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_help1.Location = new System.Drawing.Point(1039, 353);
-            this.dGV_help1.Margin = new System.Windows.Forms.Padding(4);
-            this.dGV_help1.Name = "dGV_help1";
-            this.dGV_help1.ReadOnly = true;
-            this.dGV_help1.Size = new System.Drawing.Size(68, 28);
-            this.dGV_help1.TabIndex = 21;
             // 
             // Form1
             // 
@@ -1247,29 +1114,21 @@
             this.panel2.PerformLayout();
             this.tabControl_Days.ResumeLayout(false);
             this.tabPage_Monday.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabMonday)).EndInit();
             this.tabPage_Tuesday.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabTuesday)).EndInit();
             this.tabPage_Wednesday.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabWednesday)).EndInit();
             this.tabPage_Thursday.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabThursday)).EndInit();
             this.tabPage_Friday.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabFriday)).EndInit();
             this.tabPage_Saturday.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabSaturday)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_groups)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_Rings)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_DiscForLecturer)).EndInit();
@@ -1280,8 +1139,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Discipline)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_help1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Rooms)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1320,7 +1179,6 @@
         private System.Windows.Forms.TabPage tabPage_Saturday;
         private System.Windows.Forms.DataGridView dGV_tabSaturday;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label9;
@@ -1329,7 +1187,6 @@
         private System.Windows.Forms.Button button_updateGroup;
         private System.Windows.Forms.Button button_addGroup;
         private System.Windows.Forms.DataGridView dGV_groups;
-        private System.Windows.Forms.DataGridView dGV_Rings;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;
@@ -1370,13 +1227,6 @@
         private System.Windows.Forms.TextBox tB_roomNumber;
         private System.Windows.Forms.ComboBox comboBox_roomType;
         private System.Windows.Forms.DataGridView dGV_Rooms;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.Button Ring;
         private System.Windows.Forms.DataGridView dGV_help2;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dGV_help1;
