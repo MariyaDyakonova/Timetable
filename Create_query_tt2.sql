@@ -1,1 +1,1 @@
-SELECT * FROM facultytimetable.typeofroom;
+SELECT * FROM facultytimetable.lesson;

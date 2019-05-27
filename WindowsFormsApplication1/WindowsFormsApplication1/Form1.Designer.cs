@@ -60,6 +60,12 @@
             this.dGV_tabSaturday = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dGV_DiscForGroup = new System.Windows.Forms.DataGridView();
+            this.button_delDiscForGroup = new System.Windows.Forms.Button();
+            this.button_addDiscForGroup = new System.Windows.Forms.Button();
+            this.comboBox_testDiscipline1 = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tB_groupName = new System.Windows.Forms.TextBox();
@@ -129,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_tabSaturday)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_DiscForGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_groups)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_DiscForLecturer)).BeginInit();
@@ -502,6 +509,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaShell;
+            this.panel1.Controls.Add(this.dGV_DiscForGroup);
+            this.panel1.Controls.Add(this.button_delDiscForGroup);
+            this.panel1.Controls.Add(this.button_addDiscForGroup);
+            this.panel1.Controls.Add(this.comboBox_testDiscipline1);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.tB_groupName);
@@ -515,21 +528,87 @@
             this.panel1.Size = new System.Drawing.Size(1139, 395);
             this.panel1.TabIndex = 4;
             // 
+            // dGV_DiscForGroup
+            // 
+            this.dGV_DiscForGroup.AllowUserToAddRows = false;
+            this.dGV_DiscForGroup.AllowUserToDeleteRows = false;
+            this.dGV_DiscForGroup.BackgroundColor = System.Drawing.Color.MistyRose;
+            this.dGV_DiscForGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_DiscForGroup.Location = new System.Drawing.Point(639, 43);
+            this.dGV_DiscForGroup.Margin = new System.Windows.Forms.Padding(4);
+            this.dGV_DiscForGroup.Name = "dGV_DiscForGroup";
+            this.dGV_DiscForGroup.ReadOnly = true;
+            this.dGV_DiscForGroup.Size = new System.Drawing.Size(481, 204);
+            this.dGV_DiscForGroup.TabIndex = 25;
+            this.dGV_DiscForGroup.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGV_DiscForGroup_MouseClick);
+            // 
+            // button_delDiscForGroup
+            // 
+            this.button_delDiscForGroup.Location = new System.Drawing.Point(929, 324);
+            this.button_delDiscForGroup.Margin = new System.Windows.Forms.Padding(4);
+            this.button_delDiscForGroup.Name = "button_delDiscForGroup";
+            this.button_delDiscForGroup.Size = new System.Drawing.Size(142, 38);
+            this.button_delDiscForGroup.TabIndex = 24;
+            this.button_delDiscForGroup.Text = "Удалить предмет";
+            this.button_delDiscForGroup.UseVisualStyleBackColor = true;
+            this.button_delDiscForGroup.Click += new System.EventHandler(this.button_delDiscForGroup_Click);
+            // 
+            // button_addDiscForGroup
+            // 
+            this.button_addDiscForGroup.Location = new System.Drawing.Point(743, 324);
+            this.button_addDiscForGroup.Margin = new System.Windows.Forms.Padding(4);
+            this.button_addDiscForGroup.Name = "button_addDiscForGroup";
+            this.button_addDiscForGroup.Size = new System.Drawing.Size(155, 38);
+            this.button_addDiscForGroup.TabIndex = 23;
+            this.button_addDiscForGroup.Text = "Добавить предмет";
+            this.button_addDiscForGroup.UseVisualStyleBackColor = true;
+            this.button_addDiscForGroup.Click += new System.EventHandler(this.button_addDiscForGroup_Click);
+            // 
+            // comboBox_testDiscipline1
+            // 
+            this.comboBox_testDiscipline1.FormattingEnabled = true;
+            this.comboBox_testDiscipline1.Location = new System.Drawing.Point(731, 267);
+            this.comboBox_testDiscipline1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox_testDiscipline1.Name = "comboBox_testDiscipline1";
+            this.comboBox_testDiscipline1.Size = new System.Drawing.Size(340, 24);
+            this.comboBox_testDiscipline1.TabIndex = 22;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(636, 270);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 17);
+            this.label21.TabIndex = 21;
+            this.label21.Text = "Предмет";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(759, 19);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(176, 20);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "Предметы группы";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(777, 47);
+            this.label18.Location = new System.Drawing.Point(173, 19);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(222, 20);
+            this.label18.Size = new System.Drawing.Size(132, 20);
             this.label18.TabIndex = 19;
-            this.label18.Text = "Редактирование групп";
+            this.label18.Text = "Список групп";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(778, 96);
+            this.label9.Location = new System.Drawing.Point(12, 277);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 17);
@@ -538,7 +617,7 @@
             // 
             // tB_groupName
             // 
-            this.tB_groupName.Location = new System.Drawing.Point(891, 96);
+            this.tB_groupName.Location = new System.Drawing.Point(152, 277);
             this.tB_groupName.Margin = new System.Windows.Forms.Padding(4);
             this.tB_groupName.Name = "tB_groupName";
             this.tB_groupName.Size = new System.Drawing.Size(137, 22);
@@ -546,34 +625,34 @@
             // 
             // button_deleteGroup
             // 
-            this.button_deleteGroup.Location = new System.Drawing.Point(809, 232);
+            this.button_deleteGroup.Location = new System.Drawing.Point(329, 349);
             this.button_deleteGroup.Margin = new System.Windows.Forms.Padding(4);
             this.button_deleteGroup.Name = "button_deleteGroup";
-            this.button_deleteGroup.Size = new System.Drawing.Size(219, 28);
+            this.button_deleteGroup.Size = new System.Drawing.Size(108, 28);
             this.button_deleteGroup.TabIndex = 15;
-            this.button_deleteGroup.Text = "Удалить группу";
+            this.button_deleteGroup.Text = "Удалить ";
             this.button_deleteGroup.UseVisualStyleBackColor = true;
             this.button_deleteGroup.Click += new System.EventHandler(this.button_deleteGroup_Click);
             // 
             // button_updateGroup
             // 
-            this.button_updateGroup.Location = new System.Drawing.Point(809, 196);
+            this.button_updateGroup.Location = new System.Drawing.Point(329, 313);
             this.button_updateGroup.Margin = new System.Windows.Forms.Padding(4);
             this.button_updateGroup.Name = "button_updateGroup";
-            this.button_updateGroup.Size = new System.Drawing.Size(219, 28);
+            this.button_updateGroup.Size = new System.Drawing.Size(108, 28);
             this.button_updateGroup.TabIndex = 14;
-            this.button_updateGroup.Text = "Изменить группу";
+            this.button_updateGroup.Text = "Изменить ";
             this.button_updateGroup.UseVisualStyleBackColor = true;
             this.button_updateGroup.Click += new System.EventHandler(this.button_updateGroup_Click);
             // 
             // button_addGroup
             // 
-            this.button_addGroup.Location = new System.Drawing.Point(809, 160);
+            this.button_addGroup.Location = new System.Drawing.Point(329, 277);
             this.button_addGroup.Margin = new System.Windows.Forms.Padding(4);
             this.button_addGroup.Name = "button_addGroup";
-            this.button_addGroup.Size = new System.Drawing.Size(219, 28);
+            this.button_addGroup.Size = new System.Drawing.Size(108, 28);
             this.button_addGroup.TabIndex = 13;
-            this.button_addGroup.Text = "Добавить группу";
+            this.button_addGroup.Text = "Добавить ";
             this.button_addGroup.UseVisualStyleBackColor = true;
             this.button_addGroup.Click += new System.EventHandler(this.button_addGroup_Click);
             // 
@@ -583,12 +662,13 @@
             this.dGV_groups.AllowUserToDeleteRows = false;
             this.dGV_groups.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dGV_groups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_groups.Location = new System.Drawing.Point(101, 56);
+            this.dGV_groups.Location = new System.Drawing.Point(15, 43);
             this.dGV_groups.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_groups.Name = "dGV_groups";
             this.dGV_groups.ReadOnly = true;
-            this.dGV_groups.Size = new System.Drawing.Size(467, 314);
+            this.dGV_groups.Size = new System.Drawing.Size(422, 204);
             this.dGV_groups.TabIndex = 3;
+            this.dGV_groups.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGV_groups_MouseClick);
             this.dGV_groups.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dGV_groups_MouseDoubleClick);
             // 
             // tabPage3
@@ -1132,6 +1212,7 @@
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_DiscForGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_groups)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -1234,6 +1315,12 @@
         private System.Windows.Forms.DataGridView dGV_help2;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dGV_help1;
+        private System.Windows.Forms.DataGridView dGV_DiscForGroup;
+        private System.Windows.Forms.Button button_delDiscForGroup;
+        private System.Windows.Forms.Button button_addDiscForGroup;
+        private System.Windows.Forms.ComboBox comboBox_testDiscipline1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label17;
     }
 }
 

@@ -61,9 +61,11 @@ namespace WindowsFormsApplication1
         }
         public DataTable fillDataTable(string query, MySqlConnection con, ref MySqlDataAdapter da, ref DataSet ds)
         {
+            
             da = new MySqlDataAdapter(query, con);
             ds = new DataSet();
             da.Fill(ds);
+            da.Update(ds);
             return ds.Tables[0];
         }
         public List<string> getGroupList(string query, MySqlConnection con)
@@ -104,7 +106,7 @@ namespace WindowsFormsApplication1
         
         public string[] getArraySomething(string query, MySqlConnection con)
         {
-            
+            //commonDataAdapter.Update(commonDataSet);
             MySqlCommand command = new MySqlCommand(query, con);
             MySqlDataReader reader = command.ExecuteReader();
             List<string> firstList = new List<string>();

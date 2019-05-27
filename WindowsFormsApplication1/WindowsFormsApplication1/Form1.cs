@@ -15,7 +15,8 @@ namespace TimeTableProject
 {
     public partial class Form1 : Form
     {
-       
+       public System.Windows.Forms.DataGridViewAutoSizeColumnsMode AutoSizeColumnsMode { get; set; }
+        
         private MySqlConnection connect;
         private MySqlDataAdapter commonDataAdapter; //заполняет DataSet данными из БД
         static int changedRow, changedColumn, changedDiscipline;
@@ -31,6 +32,7 @@ namespace TimeTableProject
         //DataGridView[] dgvWeekArray;
         public Form1()
         {
+            
             InitializeComponent();
             changedRow = -1;
             myIndex = -1;
@@ -43,34 +45,45 @@ namespace TimeTableProject
             {
                 connect = Connection.connection;
                 connect.Open();
-               // MySqlCommand com = new MySqlCommand(Queries.insertDiscipline, connect);//это чтобы запускалась прога
+               
+                // MySqlCommand com = new MySqlCommand(Queries.insertDiscipline, connect);//это чтобы запускалась прога
             }
             catch (InvalidCastException f)
             {
                 MessageBox.Show(f.Message);
             }
 
-           // connect.Clone();
+            // connect.Clone();
+            
             showDataBase();
+
             dgvWeekArray = new DataGridView[] { dGV_tabMonday, dGV_tabTuesday, dGV_tabWednesday, dGV_tabThursday, dGV_tabFriday, dGV_tabSaturday };
+            //commonDataAdapter.Update(commonDataSet);
             fillDGVnull();
             fillTimetableDataGrid(dgvWeekArray);
             RefreshComboBox(Queries.selectTypeOfRoomName, comboBox_roomType, connect);
             RefreshComboBox(Queries.selectTypeOfDisciplineName, comboBox_typeOfDisc, connect);
-            lecturerArray = app.getArraySomething(Queries.selectLecturerSurnameAndName,  connect);
+
+            
             discArray = app.getArraySomething(Queries.selectDisciplineForList, connect);
+
             roomArray = app.getArraySomething(Queries.selectRoomForList, connect);
             refreshArrayComboBox(lecturerArray, comboBox_Lecturer);
             refreshArrayComboBox(discArray, comboBox_testDiscipline);
+            refreshArrayComboBox(discArray, comboBox_testDiscipline1);
             refreshArrayComboBox(discArray, comboBox_discipline);
             refreshArrayComboBox(roomArray, comboBox_room);
+           
             showTimeTable();
+           
         }
 
          private void refreshArrayComboBox(string[] inputArray, ComboBox cBox)
         {
             //comboBox_testDiscipline.DropDownStyle = ComboBoxStyle.DropDownList;
+           
             cBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            
             try
             {
                 
@@ -87,6 +100,7 @@ namespace TimeTableProject
         }
         private void RefreshComboBox(string query, ComboBox cBox, MySqlConnection con)
         {
+            
             cBox.DropDownStyle = ComboBoxStyle.DropDownList;
             try
             {
@@ -122,6 +136,7 @@ namespace TimeTableProject
         private void getIndexesForLesson()  /*Queries как в  app*/
         {
             MySqlCommand command = new MySqlCommand(Queries.selectIndexForTimetable, connect);
+
             MySqlDataReader reader = command.ExecuteReader();
             ringIDList = new List<int>();
             groupIDList = new List<int>();
@@ -153,6 +168,18 @@ namespace TimeTableProject
             return ds;
         }
 
+        private DataSet searchSomeDataForOneGroup(string query, MySqlConnection con, int groupID, string alias)
+        {
+            MySqlDataReader reader;
+            DataSet ds = new DataSet();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand(query, con);  // экземпляр класса MySqlCommand с текстом запроса и MySqlConnection
+            command.Parameters.AddWithValue(alias, groupID);       //преобразует string в int groupID
+            reader = command.ExecuteReader();     //Отправляет CommandText в соединение и создает MySqlDataReader
+            table.Load(reader);
+            ds.Merge(table);
+            return ds;
+        }
 
 
         private void dGV_lecturer_MouseClick(object sender, MouseEventArgs e)
@@ -185,14 +212,21 @@ namespace TimeTableProject
                 {
                     try
                     {
+                       
                         app.getSqlWithAliasFor3Object(tb_lectName.Text, "@lectName", tB_lectSurname.Text, "@lectSurname", tB_lectPatro.Text, "@lectPatro", Queries.insertLecturer, connect);
+
+                        lecturerArray = app.getArraySomething(Queries.selectLecturerSurnameAndName, connect);
+                        refreshArrayComboBox(lecturerArray, comboBox_Lecturer);
+                        commonDataAdapter.Update(commonDataSet);
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
+                    
                     dGV_Lecturer.DataSource = app.fillDataTable(Queries.selectLecturer, connect, ref commonDataAdapter, ref commonDataSet);
                     dGV_Lecturer.Columns[0].Width = 30;
+                   // commonDataAdapter.Update(commonDataSet);
 
                     tb_lectName.Clear();
                     tB_lectSurname.Clear();
@@ -218,6 +252,9 @@ namespace TimeTableProject
                     try
                     {
                         app.getSqlWithAliasFor4Object(tb_lectName.Text, "@lectName", tB_lectSurname.Text, "@lectSurname", tB_lectPatro.Text, "@lectPatro", myIndex, "@lectID", Queries.updateLecturer, connect);
+                        lecturerArray = app.getArraySomething(Queries.selectLecturerSurnameAndName, connect);
+                        refreshArrayComboBox(lecturerArray, comboBox_Lecturer);
+                        commonDataAdapter.Update(commonDataSet);
                     }
                     catch (Exception ex)
                     {
@@ -252,6 +289,9 @@ namespace TimeTableProject
                     tB_lectPatro.Clear();
                     showDataBase();
                     myIndex = -1;
+                    lecturerArray = app.getArraySomething(Queries.selectLecturerSurnameAndName, connect);
+                    refreshArrayComboBox(lecturerArray, comboBox_Lecturer);
+                    commonDataAdapter.Update(commonDataSet);
                 }
                 else
                 {
@@ -284,13 +324,18 @@ namespace TimeTableProject
         {
             try
             {
+                
                 if (tB_groupName.Text != "")
                 {
                     try
                     {
+                       
                         app.getSqlWithAliasFor1Object(tB_groupName.Text, "@groupName", Queries.insertGroup, connect);
-                        showDataBase();
                         
+                        showDataBase();
+                       // commonDataAdapter.Update(commonDataSet);
+                        fillTimetableDataGrid(dgvWeekArray);
+
                     }
 
                     catch (Exception ex)
@@ -352,12 +397,13 @@ namespace TimeTableProject
                     {
                         app.getSqlWithAliasFor1Object(myIndex, "@groupID", Queries.deleteGroup, connect);
                         tB_groupName.Clear();
+                        //commonDataAdapter.Update(commonDataSet);
                         showDataBase();
                         fillTimetableDataGrid(dgvWeekArray);
                         myIndex = -1;
                        // app.getSqlWithAliasFor1Object(tB_groupName.Text, "@groupName", Queries.insertGroup, connect);
                         //showDataBase();
-                        //метод показывает бд
+                      
                     }
 
                     catch (Exception ex)
@@ -443,6 +489,7 @@ namespace TimeTableProject
                     app.getSqlWithAliasFor2Object(lecturerID, "@lectID", discIndex, "@discID", Queries.deleteOneDisciplineForLecturer, connect);
                     disciplineDataSet = searchSomeDataForOneLecturer(Queries.selectDisciplineForOneLecturer, connect, lecturerID, "@discLectID");
                     dGV_DiscForLecturer.DataSource = disciplineDataSet.Tables[0];
+                    
                 }
                 else
                 {
@@ -471,6 +518,9 @@ namespace TimeTableProject
                     app.getSqlWithAliasFor2Object(roomNumb, "@roomNumber", roomTypeIndex, "@typeRoomID", Queries.insertRoom, connect);
                     tB_roomNumber.Clear();
                     showDataBase();
+                    roomArray = app.getArraySomething(Queries.selectRoomForList, connect);                  
+                    refreshArrayComboBox(roomArray, comboBox_room);
+                    commonDataAdapter.Update(commonDataSet);
                 }
                 else
                 {
@@ -499,6 +549,9 @@ namespace TimeTableProject
                     myIndex = -1;
                     tB_roomNumber.Clear();
                     showDataBase();
+                    roomArray = app.getArraySomething(Queries.selectRoomForList, connect);
+                    refreshArrayComboBox(roomArray, comboBox_room);
+                    commonDataAdapter.Update(commonDataSet);
                 }
                 else
                 {
@@ -521,6 +574,9 @@ namespace TimeTableProject
                     tB_roomNumber.Clear();
                     showDataBase();
                     myIndex = -1;
+                    roomArray = app.getArraySomething(Queries.selectRoomForList, connect);
+                    refreshArrayComboBox(roomArray, comboBox_room);
+                    commonDataAdapter.Update(commonDataSet);
                 }
                 else
                 {
@@ -567,6 +623,9 @@ namespace TimeTableProject
                     int discTypeIndex = Convert.ToInt32(dGV_help2.Rows[0].Cells[0].Value);
                     app.getSqlWithAliasFor2Object(discName, "@disciplineName", discTypeIndex, "@typeDiscID", Queries.insertDiscipline, connect);
                     tB_discName.Clear();
+                    discArray = app.getArraySomething(Queries.selectDisciplineForList, connect);
+                    refreshArrayComboBox(discArray, comboBox_discipline);
+                    commonDataAdapter.Update(commonDataSet);
                     showDataBase();
                 }
                 else
@@ -583,34 +642,7 @@ namespace TimeTableProject
 
         private void Ring_Click(object sender, EventArgs e)
         {
-            /*DateTime t = new DateTime(2019, 5, 10, 9, 35, 0);
-            string[,] a = new string[7, 2];
-            for (int i = 0; i < 6; i++)
-            {
-                for (int j = 0; j < 1; j++)
-                {
-
-                    a[i, j] = (i + 1).ToString();
-                }
-
-            }
-            for (int i = 0; i < 1; i++)
-            {
-
-                int m = t.Hour + t.Minute;
-
-                a[i, 1] = m.ToString();
-            }
-
-            dgv.RowCount = 7;
-            dgv.ColumnCount = 2;
-            for (int i = 0; i < 6; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    dgv.Rows[i].Cells[j].Value = a[i, 0].ToString();
-                }
-            }*/
+            
         }
 
         private void button_deleteDisc_Click(object sender, EventArgs e)
@@ -624,6 +656,9 @@ namespace TimeTableProject
                     tB_discName.Clear();
                     showDataBase();
                     myIndex = -1;
+                    discArray = app.getArraySomething(Queries.selectDisciplineForList, connect);
+                    refreshArrayComboBox(discArray, comboBox_discipline);
+                    commonDataAdapter.Update(commonDataSet);
 
                 }
                 else
@@ -669,6 +704,9 @@ namespace TimeTableProject
                     tB_discName.Clear();
                     myIndex = -1;
                     showDataBase();
+                    discArray = app.getArraySomething(Queries.selectDisciplineForList, connect);
+                    refreshArrayComboBox(discArray, comboBox_discipline);
+                    commonDataAdapter.Update(commonDataSet);
                 }
                 else
                 {
@@ -724,7 +762,7 @@ namespace TimeTableProject
 
                     changedColumn = dgvWeekArray[changedDay - 1].SelectedCells[0].ColumnIndex;
                     string groupName = (dgvWeekArray[changedDay - 1].Columns[changedColumn].HeaderCell.Value).ToString();
-                    string sqlForSearchGroupByName = "select group_ID from facultytimetable.groups where group_name like '" + groupName + "'";
+                    string sqlForSearchGroupByName = "select group_ID from facultytimetable.grouper where group_name like '" + groupName + "'";
                     MySqlCommand command = new MySqlCommand(sqlForSearchGroupByName, connect);
                     object groupIndex = command.ExecuteScalar();//для извлечения данных из базы данных 
                     int groupID = Convert.ToInt32(groupIndex);
@@ -828,7 +866,7 @@ namespace TimeTableProject
 
                     changedColumn = dgvWeekArray[changedDay - 1].SelectedCells[0].ColumnIndex;
                     string groupName = (dgvWeekArray[changedDay - 1].Columns[changedColumn].HeaderCell.Value).ToString();
-                    string sqlForSearchGroupByName = "select group_ID from facultytimetable.groups where group_name like '" + groupName + "'";
+                    string sqlForSearchGroupByName = "select group_ID from facultytimetable.grouper where group_name like '" + groupName + "'";
                     int groupID = app.getScalarCount(sqlForSearchGroupByName, connect);
                     app.getSqlWithAliasFor3Object(ringIndex, "@ringID", groupID, "@groupID", changedDay, "@dayID", Queries.deleteLesson, connect);
 
@@ -878,7 +916,139 @@ namespace TimeTableProject
 
         private void button_excel2_Click(object sender, EventArgs e)
         {
-           
+            Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
+            ExcelApp.Application.Workbooks.Add(Type.Missing);
+            ExcelApp.Columns.ColumnWidth = 10;
+
+
+            int ringCount = dGV_tabMonday.RowCount;
+            int groupCount = dGV_tabMonday.ColumnCount;
+
+            List<string> columnNames = new List<string>();
+            List<string> ringNames = new List<string>();
+
+            for (int i = 0; i < dgvWeekArray.Length; i++)
+            {
+                for (int j = 0; j < dgvWeekArray[i].ColumnCount; j++)
+                {
+                    columnNames.Add(dgvWeekArray[i].Columns[j].HeaderCell.Value.ToString());
+                }
+            }
+            for (int j = 0; j < dgvWeekArray[0].RowCount; j++)
+            {
+                ringNames.Add(dgvWeekArray[0].Rows[j].HeaderCell.Value.ToString());
+            }
+            int k = 0;
+            foreach (string item in columnNames)
+            {
+                ExcelApp.Cells[1, k + 2] = "" + item + "";
+                k++;
+            }
+            k = 0;
+            foreach (string item in ringNames)
+            {
+                ExcelApp.Cells[k + 2, 1] = "" + item + "";
+                k++;
+            }
+            for (int m = 0; m < dgvWeekArray.Length-1; m++)
+            {
+                for (int i = 0; i < dgvWeekArray[m].RowCount; i++)
+                {
+                    for (int j = 0; j < dgvWeekArray[m].ColumnCount; j++)
+                    {
+                        if (dgvWeekArray[m].Rows[i].Cells[j].Value !=null)
+                        {
+                            object b = dgvWeekArray[m].Rows[i].Cells[j].Value;
+                            ExcelApp.Cells[i + 2, j + 2] = (dgvWeekArray[m].Rows[i].Cells[j].Value).ToString();
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                        
+                    }
+                }
+            }
+            ExcelApp.Visible = true;
+
+        }
+
+        private void button_addDiscForGroup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox_testDiscipline1.Text != "")
+                {
+                    string discNameWithType = comboBox_testDiscipline1.Text;
+                    string[] split = discNameWithType.Split('(');
+                    string disciplineName = split[0].Trim();
+                    string sqlForSearchDisciplineByName = "select discipline_ID from facultytimetable.discipline where Discipline_name like '" + disciplineName + "'";
+                    int disciplineID = app.getScalarCount(sqlForSearchDisciplineByName, connect);
+                    changedRow = dGV_groups.SelectedCells[0].RowIndex;
+                    int groupID = Convert.ToInt32(dGV_groups.Rows[changedRow].Cells[0].Value);
+                    app.getSqlWithAliasFor2Object(groupID, "@groupID", disciplineID, "@discID", Queries.insertOneDisciplineForGroup, connect);
+                    disciplineDataSet = searchSomeDataForOneGroup(Queries.selectDisciplineForOneGroup, connect, groupID, "@discGroupID");
+                    dGV_DiscForGroup.DataSource = disciplineDataSet.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("Выберите предмет!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dGV_DiscForGroup_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                changedDiscipline = dGV_DiscForGroup.SelectedCells[0].RowIndex;
+                discIndex = Convert.ToInt32(dGV_DiscForGroup.Rows[changedDiscipline].Cells[0].Value);
+                label_helpDiscID.Text = discIndex.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dGV_groups_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                changedRow = dGV_groups.SelectedCells[0].RowIndex;
+                myIndex = Convert.ToInt32(dGV_groups.Rows[changedRow].Cells[0].Value);
+                tB_groupName.Text = dGV_groups.Rows[changedRow].Cells[1].Value.ToString();
+                disciplineDataSet = searchSomeDataForOneGroup(Queries.selectDisciplineForOneGroup, connect, myIndex, "@discGroupID");
+                dGV_DiscForGroup.DataSource = disciplineDataSet.Tables[0];
+                dGV_DiscForGroup.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_delDiscForGroup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                    changedRow = dGV_groups.SelectedCells[0].RowIndex;
+                    int groupID = Convert.ToInt32(dGV_groups.Rows[changedRow].Cells[0].Value);
+                    app.getSqlWithAliasFor2Object(groupID, "@groupID", discIndex, "@discID", Queries.deleteOneDisciplineForGroup, connect);
+                    disciplineDataSet = searchSomeDataForOneGroup(Queries.selectDisciplineForOneGroup, connect, groupID, "@discGroupID");
+                    dGV_DiscForGroup.DataSource = disciplineDataSet.Tables[0];
+     
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dGV_tabSaturday_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -888,16 +1058,7 @@ namespace TimeTableProject
 
         private void dGV_groups_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                changedRow = dGV_groups.SelectedCells[0].RowIndex;
-                myIndex = Convert.ToInt32(dGV_groups.Rows[changedRow].Cells[0].Value);
-                tB_groupName.Text = dGV_groups.Rows[changedRow].Cells[1].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        
         }
 
        
@@ -920,7 +1081,7 @@ namespace TimeTableProject
         }
 
      
-        private void fillTable(string[] lessons, List<int> r, List<int> g, List<int> d) //dgv в app здесь получаем исключание!!!!!!!!!
+        private void fillTable(string[] lessons, List<int> r, List<int> g, List<int> d) 
         {
             for (int i = 0; i < lessons.Length; i++)
             {
@@ -1007,7 +1168,7 @@ namespace TimeTableProject
         private void drawDataGrid(DataGridView dgv)
         {
 
-           // dgv.RowCount = app.getScalarCount(Queries.selectCountRings, connect);
+            dgv.RowCount = app.getScalarCount(Queries.selectCountRings, connect);
             dgv.ColumnCount = app.getScalarCount(Queries.selectCountGroups, connect);
             string[] helpArray = new string[dgv.ColumnCount];
             List<string> groupNameForHeaders = app.getGroupList(Queries.selectGroupName, connect);
