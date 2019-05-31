@@ -89,9 +89,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DayInWeekController.cs" />
+    <Compile Include="Controllers\DisciplineController.cs" />
+    <Compile Include="Controllers\DisciplineGroupController.cs" />
     <Compile Include="Controllers\DisciplineLecturerController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\LecturerController.cs" />
+    <Compile Include="Controllers\LessonController.cs" />
+    <Compile Include="Controllers\RingController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\TypeOfDisciplineController.cs" />
     <Compile Include="Controllers\TypeOfRoomController.cs" />
     <Compile Include="Services\Connection.cs" />
     <Compile Include="Global.asax.cs">

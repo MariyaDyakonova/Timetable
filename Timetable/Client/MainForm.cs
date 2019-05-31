@@ -12,7 +12,7 @@ namespace Client
         static int changedRow, changedColumn, changedDiscipline;
         readonly DataGridView[] dgvWeekArray;
         private int myIndex, ringIndex, discIndex;
-      //  private List<Lesson> lessons;
+        private List<Lesson> lessons;
         string[] discArray, roomArray, lecturerArray;
 
         private readonly Applic app = new Applic();
@@ -123,7 +123,10 @@ namespace Client
             }
         }
 
-       
+        private void getLessons() 
+        {
+            lessons = app.GetList<Lesson>();
+        }
 
         #region Lecturer
         
@@ -137,7 +140,7 @@ namespace Client
                 tB_lectSurname.Text = dGV_Lecturer.Rows[changedRow].Cells[1].Value.ToString();
                 tb_lectName.Text = dGV_Lecturer.Rows[changedRow].Cells[2].Value.ToString();
                 tB_lectPatro.Text = dGV_Lecturer.Rows[changedRow].Cells[3].Value.ToString();
-               // dGV_DiscForLecturer.DataSource = app.GetDisciplinesWithTypesTable(myIndex);
+                dGV_DiscForLecturer.DataSource = app.GetDisciplinesWithTypesTable(myIndex);
                 dGV_DiscForLecturer.Columns[0].Visible = false;
             }
             catch (Exception ex)
@@ -264,9 +267,96 @@ namespace Client
         #endregion
 
         #region Group 
+        private async void button_addGroup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tB_groupName.Text != "")
+                {
+                    try
+                    {
+                        await app.Add(new Group{Group_name = tB_groupName.Text}, "group");
+                        showDataBase();
+                        fillTimetableDataGrid(dgvWeekArray);
+                    }
 
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    tB_groupName.Clear();
+                }
+                else
+                {
+                    MessageBox.Show(@"Заполните поле!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-        
+        private async void button_updateGroup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tB_groupName.Text != "")
+                {
+                    try
+                    {
+                        await app.Update(new Group{Group_name = tB_groupName.Text}, "group", myIndex);
+                        tB_groupName.Clear();
+                        myIndex = -1;
+                        fillTimetableDataGrid(dgvWeekArray);
+                        showDataBase();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }        
+                }
+                else
+                {
+                    MessageBox.Show(@"Выберите группу для редактирования");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async void button_deleteGroup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tB_groupName.Text != "")
+                {
+                    try
+                    {
+                        await app.Delete("group", myIndex);
+                        tB_groupName.Clear();
+                        showDataBase();
+                        fillTimetableDataGrid(dgvWeekArray);
+                        myIndex = -1;
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(@"Выберите группу для удаления!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void dGV_Lecturer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -730,13 +820,75 @@ namespace Client
 
         private async void button_addDiscForGroup_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                if (comboBox_testDiscipline1.Text != "")
+                {
+                    string discNameWithType = comboBox_testDiscipline1.Text;
+                    string[] split = discNameWithType.Split('(');
+                    string disciplineName = split[0].Trim();
+                    int disciplineID = app.GetDisciplineByName(disciplineName).Discipline_ID;
+                    changedRow = dGV_groups.SelectedCells[0].RowIndex;
+                    int groupID = Convert.ToInt32(dGV_groups.Rows[changedRow].Cells[0].Value);
+                    await app.Add(new DisciplineGroup {Discipline_ID = disciplineID, Group_ID = groupID}, "disciplinegroup");
+                    dGV_DiscForGroup.DataSource = app.GetGroupDisciplines(groupID);
+                }
+                else
+                {
+                    MessageBox.Show(@"Выберите предмет!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        private void dGV_DiscForGroup_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                changedDiscipline = dGV_DiscForGroup.SelectedCells[0].RowIndex;
+                discIndex = Convert.ToInt32(dGV_DiscForGroup.Rows[changedDiscipline].Cells[0].Value);
+                label_helpDiscID.Text = discIndex.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void dGV_groups_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                changedRow = dGV_groups.SelectedCells[0].RowIndex;
+                myIndex = Convert.ToInt32(dGV_groups.Rows[changedRow].Cells[0].Value);
+                tB_groupName.Text = dGV_groups.Rows[changedRow].Cells[1].Value.ToString();
+                dGV_DiscForGroup.DataSource = app.GetGroupDisciplines(myIndex);
+                dGV_DiscForGroup.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private async void button_delDiscForGroup_Click(object sender, EventArgs e)
         {
+            try
+            {
+                changedRow = dGV_groups.SelectedCells[0].RowIndex;
+                    int groupID = Convert.ToInt32(dGV_groups.Rows[changedRow].Cells[0].Value);
+                    await app.DeleteDisciplineGroup(groupID, discIndex);
+                    dGV_DiscForGroup.DataSource = app.GetGroupDisciplines(groupID);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dGV_tabSaturday_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -782,9 +934,9 @@ namespace Client
             dGV_Lecturer.Columns[0].Width = 30;
             dGV_Rooms.DataSource = app.GetRoomsWithTypesTable();
             dGV_Rooms.Columns[0].Visible = false;
-            //dGV_Discipline.DataSource = app.GetDisciplinesWithTypesTable();
+            dGV_Discipline.DataSource = app.GetDisciplinesWithTypesTable();
             dGV_Discipline.Columns[0].Visible = false;
-            //dGV_groups.DataSource = app.GetGroupDataTable();
+            dGV_groups.DataSource = app.GetGroupDataTable();
             dGV_groups.Columns[0].Visible = false;
         }
 
@@ -795,7 +947,28 @@ namespace Client
                 drawDataGrid(item);
             }
         }
-       
+        private void drawDataGrid(DataGridView dgv)
+        {
+            var groups = app.GetList<Group>();
+            dgv.RowCount = app.GetList<Ring>().Count;
+            dgv.ColumnCount = groups.Count;
+            string[] helpArray = new string[dgv.ColumnCount];
+            var groupNameForHeaders = (from item in groups select item.Group_name).ToList();
+            for (int i = 0; i < dgv.RowCount; i++)
+            {
+                dgv.Rows[i].HeaderCell.Value = (i + 1).ToString();
+            }
+            int j = 0;
+            foreach (string gName in groupNameForHeaders)
+            {
+                helpArray[j] = gName;
+                j++;
+            }
+            for (int i = 0; i < dgv.ColumnCount; i++)
+            {
+                dgv.Columns[i].HeaderCell.Value = helpArray[i];
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
