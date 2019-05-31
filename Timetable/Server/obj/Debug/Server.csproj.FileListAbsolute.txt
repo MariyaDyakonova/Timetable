@@ -1,0 +1,98 @@
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Server.dll.config
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Server.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Server.pdb
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\csc.exe
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\csc.exe.config
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\csc.rsp
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\csi.exe
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\csi.rsp
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\System.AppContext.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\vbc.exe
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\vbc.exe.config
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\vbc.rsp
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\VBCSCompiler.exe
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Models.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\MySql.Data.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Newtonsoft.Json.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\System.Net.Http.Formatting.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\System.Web.Http.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\System.Web.Http.WebHost.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Google.Protobuf.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Models.pdb
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\MySql.Data.xml
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Newtonsoft.Json.xml
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\System.Net.Http.Formatting.xml
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\System.Web.Http.xml
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\System.Web.Http.WebHost.xml
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\obj\Debug\Server.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Server\obj\Debug\Server.pdb
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Server.dll.config
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Server.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Server.pdb
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\csc.exe
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\csc.exe.config
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\csc.rsp
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\csi.exe
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\csi.rsp
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\System.AppContext.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\vbc.exe
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\vbc.exe.config
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\vbc.rsp
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\VBCSCompiler.exe
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Models.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\MySql.Data.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Newtonsoft.Json.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\System.Net.Http.Formatting.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\System.Web.Http.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\System.Web.Http.WebHost.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Google.Protobuf.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Models.pdb
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\MySql.Data.xml
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Newtonsoft.Json.xml
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\System.Net.Http.Formatting.xml
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\System.Web.Http.xml
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\System.Web.Http.WebHost.xml
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\obj\Debug\Server.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Server\obj\Debug\Server.pdb

@@ -1,0 +1,12 @@
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Models\bin\Debug\Models.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Models\bin\Debug\Models.pdb
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Models\obj\Debug\Models.dll
+C:\Users\chulk\Downloads\Timetable (new)\Timetable\Models\obj\Debug\Models.pdb
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Models\bin\Debug\Models.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Models\bin\Debug\Models.pdb
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Models\obj\Debug\Models.dll
+C:\Users\chulk\GitHubMasha\Timetable\Timetable\Models\obj\Debug\Models.pdb
