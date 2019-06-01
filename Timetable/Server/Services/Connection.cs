@@ -7,7 +7,7 @@ namespace Server.Services
     public class Connection
     {
         // создаем соединение с БД
-        string connectionString = "server=localhost;user=root;database=facultytimetable;password=root";
+        string connectionString = "server=den1.mysql5.gear.host;user=facultytimetabl1;database=facultytimetabl1;password=olya123.";
         public MySqlConnection connection;
 
         public Connection()
