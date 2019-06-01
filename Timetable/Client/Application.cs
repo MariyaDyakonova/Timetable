@@ -13,7 +13,7 @@ namespace Client
     class Applic
     {
         private readonly HttpClient http;
-        private const string uri = "http://http://timetableom.gearhostpreview.com/api/";
+        private const string uri = "http://timetableom.gearhostpreview.com/api/";
 
         public Applic()
         {
