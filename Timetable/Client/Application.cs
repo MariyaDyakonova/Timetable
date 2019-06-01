@@ -13,6 +13,7 @@ namespace Client
     class Applic
     {
         private readonly HttpClient http;
+        private const string uri = "http://http://timetableom.gearhostpreview.com/api/";
 
         public Applic()
         {
@@ -21,7 +22,7 @@ namespace Client
 
         public string GetAll(string type)
         {
-            var uri = "http://localhost:49494/api/" + type + "/";
+            var uri = Applic.uri + type + "/";
             return http.GetAsync(uri).Result.Content.ReadAsStringAsync().Result;
         }
 
@@ -124,14 +125,14 @@ namespace Client
 
         public async Task Add(dynamic obj, string type)
         {
-            var uri = "http://localhost:49494/api/" + type + "/";
+            var uri = Applic.uri + type + "/";
             var content = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
             await http.PostAsync(uri, content);
         }
 
         public async Task Update(dynamic obj, string type, int id)
         {
-            var uri = "http://localhost:49494/api/" + type + "/" + id;
+            var uri = Applic.uri + type + "/" + id;
             var content = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
             await http.PutAsync(uri, content);
         }
@@ -143,13 +144,13 @@ namespace Client
 
         public async Task Delete(string type, int id)
         {
-            var uri = "http://localhost:49494/api/" + type + "/" + id;
+            var uri = Applic.uri + type + "/" + id;
             await http.DeleteAsync(uri);
         }
 
         public async Task DeleteDisciplineGroup(int groupID, int discID)
         {
-            var uri = "http://localhost:49494/api/disciplinegroup/";
+            var uri = Applic.uri + "disciplinegroup/";
             var content = new StringContent(JsonConvert.SerializeObject(GetList<DisciplineGroup>()
                 .Find((x) => x.Group_ID == groupID && x.Discipline_ID == discID)), Encoding.UTF8, "application/json");
             var request = new HttpRequestMessage
@@ -163,7 +164,7 @@ namespace Client
 
         public async Task DeleteDisciplineLecturer(int lectID, int discID)
         {
-            var uri = "http://localhost:49494/api/disciplinelecturer/";
+            var uri = Applic.uri + "disciplinelecturer/";
             var content = new StringContent(JsonConvert.SerializeObject(GetList<DisciplineLecturer>()
                 .Find((x) => x.Lecturer_ID == lectID && x.Discipline_ID == discID)), Encoding.UTF8, "application/json");
             var request = new HttpRequestMessage
