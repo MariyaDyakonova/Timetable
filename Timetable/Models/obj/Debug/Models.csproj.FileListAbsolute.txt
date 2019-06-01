@@ -1,0 +1,6 @@
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Models\bin\Debug\Models.dll
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Models\bin\Debug\Models.pdb
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Models\obj\Debug\Models.dll
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Models\obj\Debug\Models.pdb

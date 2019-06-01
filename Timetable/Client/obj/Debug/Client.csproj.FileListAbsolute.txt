@@ -1,0 +1,14 @@
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\bin\Debug\Client.exe.config
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\bin\Debug\Client.exe
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\bin\Debug\Client.pdb
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\bin\Debug\Models.dll
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\bin\Debug\Models.pdb
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\obj\Debug\Client.MainForm.resources
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\obj\Debug\Client.exe
+C:\Users\user\Documents\GitHub\Timetable\Timetable\Client\obj\Debug\Client.pdb
