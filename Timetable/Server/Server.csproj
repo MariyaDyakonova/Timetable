@@ -233,7 +233,7 @@
     <Compile Include="Controllers\LessonController.cs" />
     <Compile Include="Controllers\RingController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    
     <Compile Include="Controllers\TypeOfDisciplineController.cs" />
     <Compile Include="Controllers\TypeOfRoomController.cs" />
     <Compile Include="Services\Connection.cs" />
